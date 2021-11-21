@@ -2,6 +2,17 @@ body {
     background-color: #F5F8F2;
     color: darkslategray;
 }
+
+footer{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background: #53B175;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
             
 .top {
     display: flex;
@@ -90,3 +101,8 @@ a:active {
 .dropdown-content a:hover {background-color: #ddd;}
 
 .dropdown:hover .dropdown-content {display: block;}
+
+.text-red-600
+{
+    color: red;
+}

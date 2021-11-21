@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\HomeComponent;
 use App\Http\Livewire\CartComponent;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
-use App\Http\Livewire\Admin\UserDashboardComponent;
+use App\Http\Livewire\Admin\AdminProductsComponent;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,25 +17,12 @@ use App\Http\Livewire\Admin\UserDashboardComponent;
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-
 Route::get('/', HomeComponent::class)->name('home1');
 
 Route::get('/cart', CartComponent::class);
 
-//for User or Customer
-Route::middleware(['auth:sanctum', 'verified'])->group(function() {
-    
-});
-
-//for Admin
 Route::middleware(['auth:sanctum', 'verified'])->group(function() {
     Route::get('/admin/dashboard',AdminDashboardComponent::class);
 });
 
-//Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-//    return view('dashboard');
-//})->name('dashboard');
-
+Route::get('/admin/dashboard', AdminProductsComponent::class)->name('home2');

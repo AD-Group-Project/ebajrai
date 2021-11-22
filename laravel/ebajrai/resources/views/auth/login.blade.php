@@ -85,11 +85,6 @@
                     padding: 80px;
                 }
 
-                footer
-                {
-                    position: absolute;
-                }
-
             </style>
             
         </head>
@@ -115,10 +110,13 @@
                                         <label for="password"> <b>Password</b> </label>
                                         <input class="form-control" type="password" name="password" placeholder="*******" required autocomplete="current-password">
                                         <br>
-                                        <x-jet-validation-errors class="mb-4" />
-                                        <hr class="mb-3">
-                                        <input class="btn btn-primary" type="submit" id="register" name="create" value="Sign Up">
                                         
+
+                                        <x-jet-validation-errors class="mb-4" />
+                                        
+                                        <input class="btn btn-primary" type="submit" id="register" name="create" value="Login"><br>
+                                        <a class="link-function" href="{{ route('password.request') }}" title="Forgotten password?" style="color: #53B175; text-decoration:none"> Forgotten password? </a>
+                                        <hr class="mb-3">
                                         <div class="mt-4">
                                             <div class="d-flex justify-content-center links">
                                                 Don't have an account? &nbsp; <a href="{{route('register')}}" style="color: #53B175; text-decoration: none">Sign Up</a>

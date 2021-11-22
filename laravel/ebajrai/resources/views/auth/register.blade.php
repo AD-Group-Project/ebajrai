@@ -100,11 +100,6 @@
                     text-align: center;
                     justify-content: center;
                 }
-
-                footer
-                {
-                    position: relative;
-                }
                 
             </style>
             

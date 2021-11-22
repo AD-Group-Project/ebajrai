@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 
 <html>
-    
+
     <head>
-        
+
         <title> Profile </title>
         <link rel="stylesheet" href="base_style.css">
         <link rel="stylesheet" type="text/css" href="astyle.css">
-        
+
         <style>
-            
+
             .container {
                 display: flex;
                 justify-content: center;
             }
-            
+
             .user_card{
                 height: 430px;
                 width: 500px;
                 padding: 0 80px 0 80px;
             }
-            
+
             .bahagi {
                 display: grid;
                 grid-template-columns: 140px 350px;
                 grid-template-rows: 40px 40px 40px 40px;
                 grid-row-gap: 15px;
             }
-            
+
             .kotak {
                 background-color: #f5f4f2;
                 width: 100%;
@@ -35,7 +35,7 @@
                 border: 1px solid gainsboro;
                 border-radius: 0.5em;
             }
-            
+
             button {
                 background-color: #53B175;
                 color: white;
@@ -44,13 +44,13 @@
                 height: 35px;
                 border-radius: 10px;
             }
-        
+
         </style>
-    
+
     </head>
-    
+
     <body>
-        
+
         <div class="top">
             <img src="images/logo.png" width="80pixels" height="80pixels">
             <div style="padding-top: 25px"> E-Bajrai Mini Market </div>
@@ -60,30 +60,30 @@
                 <div> <a href="cart.html"> Cart </a> </div>
                 <div> <a href="order.html"> Order </a> </div>
             </div>
-            <div class="user"> <a href="profile.html"><img src="images/user.jpg" width="35pixels" height="35pixels"></a> </div>   
+            <div class="user"> <a href="profile.html"><img src="images/user.jpg" width="35pixels" height="35pixels"></a> </div>
         </div><br><br>
-        
+
         <div class="container">
             <div class="user_card">
 
-                <h1 style="text-align: center"> My Profile </h1><br>
-                
+                <h1 style="text-align: center"> Profile </h1><br>
+
                 <div class="bahagi">
                     <div> Full name </div>
-                    <div class="kotak"> Kamal Ali </div>
+                    <div class="kotak"><b>Name: </b>{{$user->name}}</div>
                     <div> Email </div>
-                    <div class="kotak"> kamal@gmail.com </div>
+                    <div class="kotak"><b>Email: </b>{{$user->email}}</div>
                     <div> Phone Number </div>
-                    <div class="kotak"> 0123456789 </div>
+                    <div class="kotak"><b>Phone: </b>{{$user->profile->mobile}}</div>
                     <div> Address </div>
-                    <div class="kotak">  </div>
+                    <div class="kotak"><b>Address: </b>{{$user->profile->address}}</div>
                 </div><br><br>
-                
+
                 <div style="display: flex; justify-content: flex-end"><button> Update Profile </button></div>
 
             </div>
         </div>
-    
+
     </body>
 
 </html>

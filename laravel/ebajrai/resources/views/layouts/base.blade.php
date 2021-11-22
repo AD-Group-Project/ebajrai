@@ -17,7 +17,14 @@
             
         </script>
         @livewireScripts
-    
+        
+        <style>
+            footer
+            {
+                position: relative;
+            }
+        </style>
+
     </head>
     
     <body>
@@ -60,7 +67,7 @@
                     </div>
                     @endif
                 @else
-                <div class="user"> <a href="{{ route('register') }}"><img src="{{ asset('images/user.jpg') }}" width="35pixels" height="35pixels"></a> </div>   
+                <div class="user"> <a href="{{ route('register') }}"><img src="{{ asset('images/userlogin.png') }}" width="50pixels"></a> </div>   
                 @endif
             @endif
         </div>

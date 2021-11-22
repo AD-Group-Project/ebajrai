@@ -29,6 +29,7 @@
     
     <head>
         <title> E-Bajrai Mini Market - All Item </title>
+        <link rel="shortcut icon" href="images/logo.png">
         <link rel="stylesheet" href="{{ asset('css/base_style.css') }}">
         <link rel="stylesheet" href="{{ asset('css/shop_style.css') }}">
         @livewireStyles

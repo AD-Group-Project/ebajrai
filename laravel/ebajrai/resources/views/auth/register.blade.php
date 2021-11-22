@@ -60,8 +60,7 @@
     </x-jet-authentication-card>
 </x-guest-layout> -->
 --}}
-<x-guest-layout>
-    
+  
     <!DOCTYPE html>
     <html>
         
@@ -73,7 +72,7 @@
             <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
             <script src="https://kit.fontawesome.com/a7b35074e7.js" crossorigin="anonymous"></script>
             <link rel="stylesheet" type="text/css" href="css/astyle.css">
-            <br><br><br>
+            
             <style>
                 
                 body {
@@ -106,7 +105,9 @@
         </head>
 
         <body>
-
+        
+        <x-guest-layout>
+        <br><br><br>
             <div class="container h-100">
                 <div class="d-flex justify-content-center h-100">
                     <div class="user_card">   
@@ -149,9 +150,9 @@
                     </div>
                 </div>
             </div>
-
+        </x-guest-layout>
+        
         </body>
         
     </html>
 
-</x-guest-layout>

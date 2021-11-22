@@ -4,9 +4,12 @@
     
     <head>
         <title> E-Bajrai Mini Market - All Item </title>
-        <link rel="shortcut icon" href="images/logo.png">
+        <link rel="shortcut icon" href="{{ asset('images/logo.png') }}">
         <link rel="stylesheet" href="{{ asset('css/base_style.css') }}">
         <link rel="stylesheet" href="{{ asset('css/shop_style.css') }}">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/astyle.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
         @livewireStyles
         
          <script type="text/javascript">
@@ -44,7 +47,7 @@
                 @auth 
                     @if(Auth::user()->utype === 'ADM')
                     <div class="dropdown">
-                        <div class="user dropbtn"> <a href="profile.html"><img src="images/user.jpg" width="35pixels" height="35pixels"></a> </div>
+                        <div class="user dropbtn"> <a href="profile.html"><img src="{{ asset('images/user.jpg') }}" width="35pixels" height="35pixels"></a> </div>
                         <div class="dropdown-content">
                             <a href="{{ route('home1') }}">Home</a>
                             <a href="/admin/dashboard">Admin Dashboard</a>
@@ -56,9 +59,9 @@
                     </div>
                     @else
                     <div class="dropdown">
-                        <div class="user dropbtn"> <a href="profile.html"><img src="images/user.jpg" width="35pixels" height="35pixels"></a> </div>
+                        <div class="user dropbtn"> <a href="profile.html"><img src="{{ asset('images/user.jpg') }}" width="35pixels" height="35pixels"></a> </div>
                         <div class="dropdown-content">
-                            <a href="">My Account</a>
+                            <a href="{{ route('user.profile') }}">My Account</a>
                             <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                             <form id="logout-form" method="POST" action="{{ route('logout') }}">
                                 @csrf    

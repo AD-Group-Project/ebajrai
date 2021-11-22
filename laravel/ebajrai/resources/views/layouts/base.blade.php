@@ -21,7 +21,7 @@
         <style>
             footer
             {
-                position: relative;
+                position: absolute;
             }
         </style>
 
@@ -67,7 +67,7 @@
                     </div>
                     @endif
                 @else
-                <div class="user"> <a href="{{ route('register') }}"><img src="{{ asset('images/userlogin.png') }}" width="50pixels"></a> </div>   
+                <div class="user"> <a href="{{ route('login') }}"><img src="{{ asset('images/userlogin.png') }}" width="50pixels"></a> </div>   
                 @endif
             @endif
         </div>

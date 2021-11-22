@@ -76,7 +76,7 @@
 
                 footer
                 {
-                    position: relative;
+                    position: absolute;
                 }
 
             </style>

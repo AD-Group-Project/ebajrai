@@ -12,8 +12,7 @@ footer{
     text-align: center;
     color: white;
 }
-
-            
+          
 .top {
     display: flex;
     background-color: #53B175;
@@ -105,4 +104,9 @@ a:active {
 .text-red-600
 {
     color: red;
+}
+
+.text-green-600
+{
+    color: green;
 }

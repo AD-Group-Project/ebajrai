@@ -3,13 +3,10 @@
 <html>
     
     <head>
-        <title> E-Bajrai Mini Market - All Item </title>
         <link rel="shortcut icon" href="{{ asset('images/logo.png') }}">
         <link rel="stylesheet" href="{{ asset('css/base_style.css') }}">
         <link rel="stylesheet" href="{{ asset('css/shop_style.css') }}">
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="css/astyle.css">
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+        
         @livewireStyles
         
          <script type="text/javascript">

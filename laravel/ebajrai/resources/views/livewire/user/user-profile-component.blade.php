@@ -4,14 +4,17 @@
 
 <head>
 
-        <title>E-Bajrai | Profile </title>
-
+        <title> E-Bajrai | Profile </title>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/astyle.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+        
         <style>
             body {
                 background-color: #F5F8F2;
                 color: darkslategray;
                 font-size: 15px;
-        }
+            }
 
             .container {
                 display: flex;

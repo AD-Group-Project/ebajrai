@@ -1,6 +1,7 @@
 <!DOCTYPE html>
     <html> 
     <head>
+        <title> E-Bajrai Mini Market - All Item </title>
         <style>
             footer
             {

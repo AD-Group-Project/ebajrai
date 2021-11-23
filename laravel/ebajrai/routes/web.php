@@ -5,7 +5,6 @@ use App\Http\Livewire\HomeComponent;
 use App\Http\Livewire\CartComponent;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\Admin\AdminProductsComponent;
-use App\Http\Livewire\Admin\AdminEditProfilesComponent;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,4 +26,3 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
 });
 
 Route::get('/admin/dashboard', AdminProductsComponent::class)->name('home2');
-Route::get('/admin/about', AdminEditProfilesComponent::class)->name('admin.about');

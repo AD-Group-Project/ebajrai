@@ -3,10 +3,10 @@
 <html>
     
     <head>
-        <link rel="shortcut icon" href="{{ asset('images/logo.png') }}">
+        <title> E-Bajrai Mini Market - All Item </title>
+        <link rel="shortcut icon" href="images/logo.png">
         <link rel="stylesheet" href="{{ asset('css/base_style.css') }}">
         <link rel="stylesheet" href="{{ asset('css/shop_style.css') }}">
-        
         @livewireStyles
         
          <script type="text/javascript">
@@ -21,7 +21,7 @@
         <style>
             footer
             {
-                position: absolute;
+                position: relative;
             }
         </style>
 
@@ -44,7 +44,7 @@
                 @auth 
                     @if(Auth::user()->utype === 'ADM')
                     <div class="dropdown">
-                        <div class="user dropbtn"> <a href="profile.html"><img src="{{ asset('images/user.jpg') }}" width="35pixels" height="35pixels"></a> </div>
+                        <div class="user dropbtn"> <a href="profile.html"><img src="images/user.jpg" width="35pixels" height="35pixels"></a> </div>
                         <div class="dropdown-content">
                             <a href="{{ route('home1') }}">Home</a>
                             <a href="/admin/dashboard">Admin Dashboard</a>
@@ -56,9 +56,9 @@
                     </div>
                     @else
                     <div class="dropdown">
-                        <div class="user dropbtn"> <a href="profile.html"><img src="{{ asset('images/user.jpg') }}" width="35pixels" height="35pixels"></a> </div>
+                        <div class="user dropbtn"> <a href="profile.html"><img src="images/user.jpg" width="35pixels" height="35pixels"></a> </div>
                         <div class="dropdown-content">
-                            <a href="{{ route('user.profile') }}">My Account</a>
+                            <a href="">My Account</a>
                             <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                             <form id="logout-form" method="POST" action="{{ route('logout') }}">
                                 @csrf    
@@ -67,7 +67,7 @@
                     </div>
                     @endif
                 @else
-                <div class="user"> <a href="{{ route('login') }}"><img src="{{ asset('images/userlogin.png') }}" width="50pixels"></a> </div>   
+                <div class="user"> <a href="{{ route('register') }}"><img src="{{ asset('images/userlogin.png') }}" width="50pixels"></a> </div>   
                 @endif
             @endif
         </div>

@@ -4,7 +4,7 @@ namespace App\Http\Livewire\Admin;
 
 use Livewire\Component;
 
-class AdminEditShopInfo extends Component
+class AdminEditProfilesComponent extends Component
 {
     public $decs;
     public $monThu;

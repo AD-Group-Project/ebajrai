@@ -55,22 +55,6 @@
                 height: 35px;
                 border-radius: 10px;
             }
-
-            .linkstyle{
-                /* display: flex; 
-                justify-content: flex-end; */
-                /* position: relative;
-                right:0%; */
-                padding-left: 40px;
-                margin-left: 265px;
-                background-color: #53B175;
-                color: white;
-                border: 2px solid #53B175;
-                width: 40%;
-                height: 35px;
-                border-radius: 10px;
-            }
-
             .col-md-9{
                 padding-left: 120px;
             }
@@ -99,12 +83,12 @@
                     <div> Email </div>
                     <div class="kotak">{{$user->email}}</div>
                     <div> Phone Number </div>
-                    <div class="kotak">{{$user->profile->phone}}</div>
+                    <div class="kotak">{{$user->profile->mobile}}</div>
                     <div> Address </div>
                     <div class="kotak">{{$user->profile->address}}</div>
                 </div><br><br>
                 
-                <div class="linkstyle"><a href="{{ route('user.editprofile') }}">Update Profile</a></div>
+                <div style="display: flex; justify-content: flex-end"><button> Update Profile </button></div>
 
             </div>
         </div>

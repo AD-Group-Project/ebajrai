@@ -3,16 +3,13 @@
     <head>
         <title> E-Bajrai Mini Market - All Item </title>
         <style>
-            footer
-            {
-                position: relative;
-            }
+            
         </style> 
     </head>
     <body>
 
     <div class="title">
-                <b> All Item</b>
+                <b>{{$category_name}}</b>
             </div>
             
             <div class="content">

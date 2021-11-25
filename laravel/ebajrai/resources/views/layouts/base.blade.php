@@ -74,9 +74,9 @@
         
         {{$slot}}
         
-        <footer>
+        <!--<footer>
             <p>© Copyright 2021 Bajrai Mini Market, Inc.</p>
-        </footer>
+        </footer>-->
     </body>
 
 </html>

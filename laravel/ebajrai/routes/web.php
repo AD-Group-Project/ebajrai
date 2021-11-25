@@ -3,10 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\HomeComponent;
 use App\Http\Livewire\CartComponent;
-use App\Http\Livewire\CategoryComponent;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\Admin\AdminProductsComponent;
-use App\Http\Livewire\Admin\AdminEditProfilesComponent;
 use App\Http\Livewire\User\UserProfileComponent;
 use App\Http\Livewire\User\UserEditProfileComponent;
 
@@ -22,6 +20,7 @@ use App\Http\Livewire\User\UserEditProfileComponent;
 */
 
 Route::get('/', HomeComponent::class)->name('home1');
+
 Route::get('/cart', CartComponent::class);
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function() {
@@ -31,6 +30,3 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
 });
 
 Route::get('/admin/dashboard', AdminProductsComponent::class)->name('home2');
-Route::get('/admin/about', AdminEditProfilesComponent::class)->name('admin.about');
-Route::get('/user/profile',UserProfileComponent::class)->name('user.profile');
-Route::get('/product-category/{category_slug}', CategoryComponent::class)->name('product.category');

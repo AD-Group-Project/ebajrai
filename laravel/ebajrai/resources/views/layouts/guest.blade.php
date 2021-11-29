@@ -29,7 +29,7 @@
     
     <head>
         <title> E-Bajrai Mini Market | All Item </title>
-        <link rel="shortcut icon" href="{{ asset('images/logo.png') }}>
+        <link rel="shortcut icon" href={{ asset('images/logo.png') }}>
         <link rel="stylesheet" href="{{ asset('css/base_style.css') }}">
         <link rel="stylesheet" href="{{ asset('css/shop_style.css') }}">
         @livewireStyles
@@ -51,7 +51,7 @@
             <img src="{{ asset('images/logo.png') }}" width="80pixels" height="80pixels">
             <div style="padding-top: 25px"> E-Bajrai Mini Market </div>
             <div class="menu">
-                <div> <a href="{{ route('admin.about') }}"> About </a> </div>
+                <div> <a href="shop_details.html"> About </a> </div>
                 <div> <a href="{{ route('home1') }}">  Shop  </a> </div>
                 <div> <a href="/cart"> Cart </a> </div>
                 <div> <a href="order.html"> Order </a> </div>

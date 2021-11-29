@@ -1,7 +1,7 @@
 <!DOCTYPE html>
     <html> 
     <head>
-        <title> E-Bajrai Mini Market - All Item </title>
+        <title> E-Bajrai Mini Market | All Item </title>
         <style>
             
         </style> 
@@ -32,7 +32,7 @@
                     <div class="item">
                         <img src="{{ asset('images') }}/{{ $product->image }}" style="width: 170px; height: 170px" class="center">
                         <b> {{ $product->name }} </b> <br>
-                        <a href="des_chicken.html" style="font-size: 12px; color: #268147"> Description </a> <br>
+                        <a href="{{route('product.details',['slug'=>$product->slug])}}" style="font-size: 12px; color: #268147"> Description </a> <br>
                         <div style="color: #268147; text-align: center"> RM {{ $product->price }} </div>
                         <form class="item_input"> 
                             <input type="number" name="chicken" size="5" value="1" class="quantity">

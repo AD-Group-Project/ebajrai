@@ -26,6 +26,8 @@
                     @endforeach
                     </ul>
 
+                    @livewire('header-search-component')
+
                 </div>
                 
                 

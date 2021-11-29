@@ -60,7 +60,7 @@
             @if(Session::has('message'))
                 <div class="alert alert-success" role="alert">{{Session::get('message')}} </div>
             @endif
-          <form class="editDetails" wire:submit.prevent="updateAbout">
+          <form class="editDetails" wire:submit.prevent="updateProfile">
             <b>Description:</b><br>
             <textarea wire:model="desc" id="desc" rows="6" cols="80" value="">Pasar Mini Bajrai is a mini market or grocery shop located in No. 1 Jalan Ampuan, 83000 Batu Pahat, Johor. We provides basic needs by people for their daily life such as food, chicken, meat, sugar, flour, and a variety types of rice, spices and seasonings. Other than that, We also provides frozen foods such as roti canai, donuts and curry puffs.
             </textarea>

@@ -30,9 +30,9 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
     Route::get('/admin/dashboard',AdminDashboardComponent::class);
     Route::get('/user/profile',UserProfileComponent::class)->name('user.profile');
     Route::get('/user/profile/edit',UserEditProfileComponent::class)->name('user.editprofile');
-    Route::get('/admin/about', AdminEditProfilesComponent::class)->name('admin.about');
 });
 
 Route::get('/admin/dashboard', AdminProductsComponent::class)->name('home2');
+Route::get('/admin/about', AdminEditProfilesComponent::class)->name('admin.about');
 Route::get('/product-category/{category_slug}', CategoryComponent::class)->name('product.category');
 Route::get('/product/{slug}', DetailsComponent::class)->name('product.details');

@@ -2,7 +2,6 @@
 
 namespace App\Http\Livewire\Admin;
 
-use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class AdminEditProfilesComponent extends Component
@@ -30,7 +29,7 @@ class AdminEditProfilesComponent extends Component
     public function updateProfile() 
     {
         $admin = Admin::find(Auth::admin()->id);
-        $admin->decs = this->decs;
+        $admin->desc = this->desc;
         $admin->monThu = this->monThu;
         $admin->friday = this->friday;
         $admin->saturday = this->saturday;

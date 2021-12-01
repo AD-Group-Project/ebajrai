@@ -5,9 +5,12 @@
     <head>
         
         <title> Products </title>
+
         
         <link rel="stylesheet" href="{{ asset('css/base_style.css') }}">
         <link rel="stylesheet" href="{{ asset('css/shop_style.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/astyle.css') }}">
+        
         
         <style>
             
@@ -32,6 +35,10 @@
             }
             
         </style>
+        @livewireStyles
+
+        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+        @livewireScripts
     
     </head>
     

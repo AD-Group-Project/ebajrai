@@ -5,7 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\Product;
 use Livewire\Component;
 use App\Models\Category;
-use Illuminate\Support\Facades\Auth;;
+use Illuminate\Support\Facades\Auth;
 
 class DetailsComponent extends Component
 {

@@ -49,18 +49,25 @@
                 <br> <br> <hr>
                 @auth
                     @if(Auth::user()->utype === 'ADM')
-                    <b> Product Placement </b> <br>
-                        {{$product->productPlacement}}
-                    <br> <br> <hr>
-                    @endif
+                        <b> Product Placement </b> <br>
+                            {{$product->productPlacement}}
+                        <br> <br> <hr>
+                    @elseif (Auth::user()->utype === 'USR')
+                        <form class="item_input_des" style="text-align: right"> 
+                            <input type="number" name="apple" size="5" value="1" class="quantity_des">
+                            <button class="button_des" name="add" onclick="addedtocart()"> Add to Cart </button>
+                            <br>
+                            Quantity: {{$product->quantity}} pcs available <span style="color:red"> (*{{$product->stock_status}}) </span>
+                        </form>
                 @endauth
-
-                    <form class="item_input_des" style="text-align: right"> 
-                        <input type="number" name="apple" size="5" value="1" class="quantity_des">
-                        <button class="button_des" name="add" onclick="addedtocart()"> Add to Cart </button>
-                        <br>
-                        Quantity: {{$product->quantity}} pcs available <span style="color:red"> (*{{$product->stock_status}}) </span>
-                    </form>
+                    @else
+                        <form class="item_input_des" style="text-align: right"> 
+                            <input type="number" name="apple" size="5" value="1" class="quantity_des">
+                            <button class="button_des" name="add" onclick="addedtocart()"> Add to Cart </button>
+                            <br>
+                            Quantity: {{$product->quantity}} pcs available <span style="color:red"> (*{{$product->stock_status}}) </span>
+                        </form>
+                    @endif
             </div>
         
         </div>

@@ -24,6 +24,7 @@ class ProductsTableSeeder extends Seeder
             'quantity' => 30,
             'image' => 'Chicken.jpg',
             'category_id' => 3,
+            'productPlacement' => 'Freezer 1',
         ]);
 
         Product::create([
@@ -36,6 +37,7 @@ class ProductsTableSeeder extends Seeder
             'quantity' => 30,
             'image' => 'Meet.jpg',
             'category_id' => 3,
+            'productPlacement' => 'Freezer 2',
         ]);
 
         Product::create([
@@ -48,6 +50,7 @@ class ProductsTableSeeder extends Seeder
             'quantity' => 30,
             'image' => 'Apple.jpg',
             'category_id' => 1,
+            'productPlacement' => 'Freezer 3',
         ]);
 
         Product::create([
@@ -60,6 +63,7 @@ class ProductsTableSeeder extends Seeder
             'quantity' => 30,
             'image' => 'Banana.jpg',
             'category_id' => 1,
+            'productPlacement' => 'Rack 1-a',
         ]);
 
         Product::create([
@@ -72,6 +76,7 @@ class ProductsTableSeeder extends Seeder
             'quantity' => 30,
             'image' => 'CocaCola.jpg',
             'category_id' => 4,
+            'productPlacement' => 'Refrigerator 1-a',
         ]);
 
         Product::create([
@@ -84,6 +89,7 @@ class ProductsTableSeeder extends Seeder
             'quantity' => 30,
             'image' => 'EggGredA.jpg',
             'category_id' => 2,
+            'productPlacement' => 'Rack 2-a',
         ]);
 
         Product::create([
@@ -96,6 +102,7 @@ class ProductsTableSeeder extends Seeder
             'quantity' => 30,
             'image' => 'EggGredB.jpg',
             'category_id' => 2,
+            'productPlacement' => 'Rack 2-b',
         ]);
 
         Product::create([
@@ -108,6 +115,7 @@ class ProductsTableSeeder extends Seeder
             'quantity' => 30,
             'image' => 'Salad.jpg',
             'category_id' => 1,
+            'productPlacement' => 'Rack 1-b',
         ]);
 
         Product::create([
@@ -120,6 +128,7 @@ class ProductsTableSeeder extends Seeder
             'quantity' => 30,
             'image' => 'Sawi.jpg',
             'category_id' => 1,
+            'productPlacement' => 'Rack 1-b',
         ]);
 
         Product::create([
@@ -132,6 +141,7 @@ class ProductsTableSeeder extends Seeder
             'quantity' => 30,
             'image' => 'AsianSeaBass.jpg',
             'category_id' => 3,
+            'productPlacement' => 'Freezer 3-a',
         ]);
 
         Product::create([
@@ -144,6 +154,7 @@ class ProductsTableSeeder extends Seeder
             'quantity' => 30,
             'image' => 'RedSnapper.jpg',
             'category_id' => 3,
+            'productPlacement' => 'Freezer 3-b',
         ]);
 
         Product::create([
@@ -156,6 +167,7 @@ class ProductsTableSeeder extends Seeder
             'quantity' => 30,
             'image' => 'Watermelon.jpg',
             'category_id' => 1,
+            'productPlacement' => 'Rack 1-a',
         ]);
 
         Product::create([
@@ -168,6 +180,7 @@ class ProductsTableSeeder extends Seeder
             'quantity' => 30,
             'image' => 'Potato.jpg',
             'category_id' => 1,
+            'productPlacement' => 'Rack 1-b',
         ]);
 
         Product::create([
@@ -180,6 +193,7 @@ class ProductsTableSeeder extends Seeder
             'quantity' => 30,
             'image' => 'MineralWater.jpg',
             'category_id' => 4,
+            'productPlacement' => 'Refrigerator 1-b',
         ]);
 
         Product::create([
@@ -192,6 +206,7 @@ class ProductsTableSeeder extends Seeder
             'quantity' => 30,
             'image' => 'TropicanaTwister.jpg',
             'category_id' => 4,
+            'productPlacement' => 'Refrigerator 1-c',
         ]);
 
         Product::create([
@@ -204,6 +219,7 @@ class ProductsTableSeeder extends Seeder
             'quantity' => 30,
             'image' => 'SaltedEgg.jpg',
             'category_id' => 2,
+            'productPlacement' => 'Rack 2-c',
         ]);
     }
 }

@@ -14,7 +14,7 @@
             <li> <a href="{{ route('product.category',['category_slug'=>$category->slug]) }}" style="color: #268147"> {{ $category->name }} </a> </li>
         @endforeach
         </ul>
-        <br><div style="display: flex"><button class="btn" style="font-size: 15px"> <a href="admin_addproduct.html">Add New Product</a> </button></div>
+        <br><div style="display: flex"><button class="btn" style="font-size: 15px"> <a href="{{ route('admin.add') }}">Add New Product</a> </button></div>
     
     </div>
     
@@ -29,7 +29,7 @@
                 <a href="{{route('product.details',['slug'=>$product->slug])}}" style="font-size: 12px; color: #268147"> Description </a> <br>
                 <div style="color: #268147; text-align: center"> RM {{ $product->price }} </div>
                 <div style="display: flex; justify-content: space-between">
-                    <button> <a href="admin_editproduct.html">Edit product</a> </button>
+                    <button> <a href="/admin/editproduct/{{ $product->id }}">Edit product</a> </button>
                     <button class="delete"> <a href="" style="color: darkslategray;">Delete product</a> </button>
                 </div>
             </div>

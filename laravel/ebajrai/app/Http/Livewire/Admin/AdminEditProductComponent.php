@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Admin;
 
 use App\Models\Product;
+use App\Models\Category;
 use Livewire\Component;
 use Illuminate\Support\Str;
 use Carbon\Carbon;

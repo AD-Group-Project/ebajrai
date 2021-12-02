@@ -13,7 +13,7 @@ class AdminProductsComponent extends Component
 
     public function render()
     {
-        $products = Product::paginate(16);
+        $products = Product::paginate(20);
         $categories = Category::all();
         return view('livewire.admin.admin-products-component', ['products'=>$products, 'categories'=>$categories])->layout('livewire\admin\admin-dashboard-component');
     }

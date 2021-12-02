@@ -13,7 +13,7 @@ class HomeComponent extends Component
     use WithPagination;
     public function render()
     {
-        $products = Product::paginate(16);
+        $products = Product::paginate(20);
         $categories = Category::all();
         if(!Auth::user())
         {

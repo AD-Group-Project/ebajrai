@@ -44,7 +44,7 @@ class AdminEditProduct extends Controller
         }
 
         $product->save();
-        return redirect()->back()->with('message', 'Product has been created succesfully!');
+        return redirect('/admin/addproduct')->with('message', 'Product has been created succesfully!');
     }
 
     function editForm($id)
@@ -56,7 +56,6 @@ class AdminEditProduct extends Controller
     function editProduct(Request $request, $id)
     {
         $name = $request->input('nama');
-        $slug = $request->input('slug'); 
         $description = $request->input('description'); 
         $packing = $request->input('packing'); 
         $price = $request->input('price'); 
@@ -81,5 +80,11 @@ class AdminEditProduct extends Controller
 
         DB::update('update products set name=?,description=?,packing=?,price=?,stock_status=?,quantity=?,image=?,category_id=?,productPlacement=? where id=?', [$name,$description,$packing,$price,$stock_status,$quantity,$image,$category_id,$productPlacement,$id]);
         return redirect()->back()->with('message', 'Product has been updated succesfully!');
+    }
+
+    function deleteProduct($slug)
+    {
+        DB::delete('delete from products where slug=?', [$slug]);
+        return redirect('/')->with('message', 'Product has been deleted succesfully!');
     }
 }

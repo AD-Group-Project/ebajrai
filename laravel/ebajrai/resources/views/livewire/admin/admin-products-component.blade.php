@@ -29,8 +29,12 @@
                 <a href="{{route('product.details',['slug'=>$product->slug])}}" style="font-size: 12px; color: #268147"> Description </a> <br>
                 <div style="color: #268147; text-align: center"> RM {{ $product->price }} </div>
                 <div style="display: flex; justify-content: space-between">
-                    <button> <a href="/admin/editproduct/{{ $product->id }}">Edit product</a> </button>
-                    <button class="delete"> <a href="" style="color: darkslategray;">Delete product</a> </button>
+                    <button> <a href="/admin/editproduct/{{ $product->id }}">Edit product</a> </button>  
+                    <form action="/admin/deleteproduct/{{ $product->slug }}" method="get" onsubmit="return confirm('Are you sure you want to delete this product?')">
+                        @method('delete')  
+                        @csrf  
+                            <button class="delete">Delete product</button>
+                    </form>
                 </div>
             </div>
 

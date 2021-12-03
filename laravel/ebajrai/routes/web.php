@@ -37,6 +37,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
     Route::get('/user/profile/edit',UserEditProfileComponent::class)->name('user.editprofile');
     Route::get('/admin/addproduct', [AdminEditProduct::class, 'addForm'])->name('admin.add');
     Route::post('/addproduct', [AdminEditProduct::class, 'addProduct'])->name('addproduct');
-    Route::get('/admin/editproduct/{id}', [AdminEditProduct::class, 'editForm'])->name('admin.edit');
-    Route::post('/editproduct/{id}', [AdminEditProduct::class, 'editProduct'])->name('editproduct');
+    Route::get('/admin/editproduct/{id}', [AdminEditProduct::class, 'editForm']);
+    Route::post('/editproduct/{id}', [AdminEditProduct::class, 'editProduct']);
+    Route::get('/admin/deleteproduct/{slug}', [AdminEditProduct::class, 'deleteProduct']);
 });

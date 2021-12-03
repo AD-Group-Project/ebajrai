@@ -33,8 +33,12 @@
 
                 </div>
                 
-                
                 <div class="right_content">
+                    @if(session()->has('message'))
+                        <div class="mesej">
+                            {{ session()->get('message') }}
+                        </div>
+                    @endif
                     @foreach ($products as $product) 
                     
                     <div class="item">
@@ -45,9 +49,18 @@
                         @auth
                          @if (Auth::user()->utype === 'ADM')
                             <div style="display: flex; justify-content: space-between">
-                                <button> <a href="/admin/editproduct/{{ $product->id }}">Edit product</a> </button>
-                                <button class="delete"> <a href="" style="color: darkslategray;">Delete product</a> </button>
+                                <button> <a href="/admin/editproduct/{{ $product->id }}">Edit product</a> </button>  
+                                <form action="/admin/deleteproduct/{{ $product->slug }}" method="get" onsubmit="return confirm('Are you sure you want to delete this product?')">
+                                    @method('delete')  
+                                    @csrf  
+                                        <button class="delete">Delete product</button>
+                                </form>
                             </div>
+                            <script>
+                                function myFunction() {
+                                    alert('Hello');
+                                }
+                            </script>
                          @elseif (Auth::user()->utype === 'USR')
                             <form class="item_input"> 
                                 <input type="number" name="chicken" size="5" value="1" class="quantity">

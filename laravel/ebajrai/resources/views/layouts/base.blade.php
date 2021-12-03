@@ -9,13 +9,12 @@
         
         @livewireStyles
         
-         <script type="text/javascript">
-            
+         <script type="text/javascript"> 
             function addedtocart() {
                 alert("Item added to cart!");
             }
-            
         </script>
+
         @livewireScripts
         
         <style>

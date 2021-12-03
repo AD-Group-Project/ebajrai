@@ -41,7 +41,6 @@
                 border-radius: 3px;
                 height: 30px;
                 width: 350px;
-                background-color: #fafafa;
             }
             
             button {
@@ -51,9 +50,10 @@
                 width: 40%;
                 height: 35px;
                 border-radius: 10px;
-                font-family: Times New Roman;
                 font-size: 15px;
             }
+
+            a:hover {color: white;}
             
         </style>
         @livewireStyles
@@ -125,11 +125,11 @@
                         </div>
                         
                         <div> <label>Category</label> </div>
-                        <div> <select name="category_id" value="{{ $product[0]->category_id }}">
-                            <option value="1"> Fruits and Vegetables </option>
-                            <option value="2"> Dairy and Egg </option>
-                            <option value="3"> Meat and Fish </option>
-                            <option value="4"> Beverage </option>
+                        <div> <select name="category_id">
+                            <option value="1" @if ($product[0]->category_id == "1") selected @endif> Fruits and Vegetables </option>
+                            <option value="2" @if ($product[0]->category_id == "2") selected @endif> Dairy and Egg </option>
+                            <option value="3" @if ($product[0]->category_id == "3") selected @endif> Meat and Fish </option>
+                            <option value="4" @if ($product[0]->category_id == "4") selected @endif> Beverage </option>
                         </select> </div>
 
                         <div> <label>Product Placement</label> </div> 

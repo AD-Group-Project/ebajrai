@@ -110,3 +110,16 @@ a:active {
 {
     color: green;
 }
+
+.mesej
+{
+    position:relative;
+    padding:1rem 1rem;
+    margin-bottom:1rem;
+    border:1px solid transparent;
+    border-radius:.25rem;
+    background-color:#d1e7dd;
+    border-color:#badbcc;
+    width: 1200px;
+    height: 30px;
+}

@@ -35,13 +35,12 @@
                 grid-template-rows: 40px 40px 40px 40px 40px 40px 40px;
                 grid-row-gap: 15px;
             }
-            
+
             input, textarea {
                 border: 1px solid darkgray;
                 border-radius: 3px;
                 height: 30px;
                 width: 350px;
-                background-color: #fafafa;
             }
             
             button {
@@ -51,9 +50,10 @@
                 width: 40%;
                 height: 35px;
                 border-radius: 10px;
-                font-family: Times New Roman;
                 font-size: 15px;
             }
+
+            a:hover {color: white;}
             
         </style>
         @livewireStyles

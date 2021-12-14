@@ -2,6 +2,16 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\HomeComponent;
+use App\Http\Livewire\CartComponent;
+use App\Http\Livewire\CategoryComponent;
+use App\Http\Livewire\DetailsComponent;
+use App\Http\Livewire\Admin\AdminDashboardComponent;
+use App\Http\Livewire\Admin\AdminProductsComponent;
+use App\Http\Livewire\Admin\AdminEditProfilesComponent;
+use App\Http\Livewire\User\UserProfileComponent;
+use App\Http\Livewire\User\UserEditProfileComponent;
+use App\Http\Controllers\AdminAddProduct;
+use App\Http\Controllers\AdminEditProduct;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,17 +24,14 @@ use App\Http\Livewire\HomeComponent;
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-
-<<<<<<< Updated upstream
-Route::get('/', HomeComponent::class);
+Route::get('/', HomeComponent::class)->name('home1');
+Route::get('/cart', CartComponent::class);
+Route::get('/product-category/{category_slug}', CategoryComponent::class)->name('product.category');
+Route::get('/product/{slug}', DetailsComponent::class)->name('product.details');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
-=======
 Route::middleware(['auth:sanctum', 'verified'])->group(function() {
     Route::get('/admin/dashboard',AdminDashboardComponent::class);
     Route::get('/admin/dashboard', AdminProductsComponent::class)->name('home2');
@@ -36,6 +43,6 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
     Route::post('/addproduct', [AdminEditProduct::class, 'addProduct'])->name('addproduct');
     Route::get('/admin/editproduct/{id}', [AdminEditProduct::class, 'editForm']);
     Route::post('/editproduct/{id}', [AdminEditProduct::class, 'editProduct']);
-    Route::get('/admin/deleteproduct/{slug}', [AdminEditProduct::class, 'deleteProduct']);
+    Route::get('/admin/deleteproduct/{slug}', [AdminEditProduct::class, 'deleteProduct']);    
 });
->>>>>>> Stashed changes
+

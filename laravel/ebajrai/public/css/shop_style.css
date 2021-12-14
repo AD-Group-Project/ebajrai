@@ -108,3 +108,11 @@ button {
     height: 45px;
     text-align: center;
 }
+
+.delete {
+    background-color: white;
+    border: 2px solid #53B175;
+    color: darkslategray; 
+    width:110%;
+    float:right;
+}

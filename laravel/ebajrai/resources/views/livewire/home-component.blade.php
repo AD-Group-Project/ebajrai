@@ -1,8 +1,8 @@
-<<<<<<< Updated upstream
+
 <div>
     {{-- If you look to others for fulfillment, you will never truly be fulfilled. --}}
 </div>
-=======
+
 <!DOCTYPE html>
     <html> 
     <head>
@@ -29,10 +29,11 @@
                     @foreach ($categories as $category) 
                         <li> <a href="{{ route('product.category',['category_slug'=>$category->slug]) }}" style="color: #268147"> {{ $category->name }} </a> </li>
                     @endforeach
-                    </ul> <br><br>
+                     <br><br>
 
                     @livewire('header-search-component')
-
+                    </ul>
+                    
                     @auth
                         @if(Auth::user()->utype === 'ADM')
                             <br><div style="display: flex"><button class="btn" style="font-size: 15px"> <a href="{{ route('admin.add') }}">Add New Product</a> </button></div>
@@ -88,4 +89,3 @@
             </div>
         </body>      
     </html>
->>>>>>> Stashed changes

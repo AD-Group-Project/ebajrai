@@ -16,7 +16,7 @@ class HeaderSearchComponent extends Component
     public function mount()
     {
         $this->product_cat = 'All Category';
-        $this->fill(request()->only('search','product_cat', product_cat_id));
+        $this->fill(request()->only('search','product_cat', 'product_cat_id'));
     }
 
     use WithPagination;

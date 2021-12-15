@@ -33,6 +33,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 Route::middleware(['auth:sanctum', 'verified'])->group(function() {
+    Route::get('/admin/about', AdminEditProfilesComponent::class)->name('admin.about');
     Route::get('/admin/dashboard',AdminDashboardComponent::class);
     Route::get('/admin/dashboard', AdminProductsComponent::class)->name('home2');
     Route::get('/admin/editshop/{id}', [AdminEditShop::class, 'editForm']);

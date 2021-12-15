@@ -31,7 +31,7 @@
                     @endforeach
                      <br><br>
 
-                    @livewire('header-search-component')
+                    {{-- @livewire('header-search-component') --}}
                     </ul>
                     
                     @auth

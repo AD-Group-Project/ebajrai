@@ -24,7 +24,7 @@
                     </ul>
                     @auth
                         @if(Auth::user()->utype === 'ADM')
-                            <br><div style="display: flex"><button class="btn" style="font-size: 15px"> <a href="admin_addproduct.html">Add New Product</a> </button></div>
+                            <br><div style="display: flex"><button class="btn" style="font-size: 15px"> <a href="{{ route('admin.add') }}">Add New Product</a> </button></div>
                         @endif    
                     @endauth
 
@@ -42,8 +42,8 @@
                         @auth
                          @if (Auth::user()->utype === 'ADM')
                             <div style="display: flex; justify-content: space-between">
-                                <button> <a href="admin_editproduct.html">Edit product</a> </button>
-                                <button class="delete"> <a href="" style="color: darkslategray;">Delete product</a> </button>
+                                <button> <a href="/admin/editproduct/{{ $product->id }}">Edit product</a> </button>
+                                <button class="delete"> <a href="/admin/deleteproduct/{{ $product->slug }}" style="color: darkslategray;">Delete product</a> </button>
                             </div>
                          @elseif (Auth::user()->utype === 'USR')
                             <form class="item_input"> 

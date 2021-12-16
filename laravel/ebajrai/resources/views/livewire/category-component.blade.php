@@ -41,10 +41,14 @@
                         <div style="color: #268147; text-align: center"> RM {{ $product->price }} </div>
                         @auth
                          @if (Auth::user()->utype === 'ADM')
-                            <div style="display: flex; justify-content: space-between">
-                                <button> <a href="/admin/editproduct/{{ $product->id }}">Edit product</a> </button>
-                                <button class="delete"> <a href="/admin/deleteproduct/{{ $product->slug }}" style="color: darkslategray;">Delete product</a> </button>
-                            </div>
+                         <div style="display: flex; justify-content: space-between">
+                            <button> <a href="/admin/editproduct/{{ $product->id }}">Edit product</a> </button>  
+                            <form action="/admin/deleteproduct/{{ $product->slug }}" method="get" onsubmit="return confirm('Are you sure you want to delete this product?')">
+                                @method('delete')  
+                                @csrf  
+                                    <button class="delete">Delete product</button>
+                            </form>
+                        </div>
                          @elseif (Auth::user()->utype === 'USR')
                             <form class="item_input"> 
                                 <input type="number" name="chicken" size="5" value="1" class="quantity">

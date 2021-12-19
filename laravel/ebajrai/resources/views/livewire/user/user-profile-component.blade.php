@@ -22,7 +22,7 @@
             }
 
             .user_card{
-                height: 650px;
+                height: 700px;
                 width: 600px;
                 padding: 20px 80px 20px 80px;
                 background-color: white;
@@ -56,13 +56,7 @@
                 border-radius: 10px;
             }
 
-            .linkstyle{
-                /* display: flex; 
-                justify-content: flex-end; */
-                /* position: relative;
-                right:0%; */
-                padding-left: 40px;
-                margin-left: 265px;
+            button {
                 background-color: #53B175;
                 color: white;
                 border: 2px solid #53B175;
@@ -85,6 +79,13 @@
 
                 <h1 style="text-align: center"> Profile </h1>
                 <hr class="mb-3">
+                
+                @if(session()->has('message'))
+                    <div class="alert alert-success">
+                        {{ session()->get('message') }}
+                    </div>
+                @endif
+
                 <div class="col-md-9">
                         @if($user->profile->image)
                             <img src="{{asset('images/profile')}}/{{$user->profile->image}}" width="100%" />
@@ -102,10 +103,12 @@
                     <div class="kotak">{{$user->profile->phone}}</div>
                     <div> Address </div>
                     <div class="kotak">{{$user->profile->address}}</div>
-                </div><br><br>
+                    <br><br>
                 
-                <div class="linkstyle"><a href="{{ route('user.editprofile') }}">Update Profile</a></div>
-
+                    <form action="/user/editprofile/{{ $user->id }}">
+                        <div style="display: flex; justify-content: flex-end"><button type="submit"> Update Profile </button></div>
+                    </form>
+                </div>
             </div>
         </div>
     </body>

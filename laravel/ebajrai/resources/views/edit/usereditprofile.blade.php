@@ -6,9 +6,10 @@
 
         <title> E-Bajrai | Edit Profile </title>
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="css/astyle.css">
+        <link rel="stylesheet" href="{{ asset('css/base_style.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/shop_style.css') }}">
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
-        
+
         <style>
             body {
                 background-color: #F5F8F2;
@@ -63,6 +64,27 @@
     </head>
 
     <body>
+        <div class="top">
+            <img src="{{ asset('images/logo.png') }}" width="80pixels" height="80pixels">
+            <div style="padding-top: 25px"> E-Bajrai Mini Market </div>
+            <div class="menu">
+                <div> <a href="shop_details.html"> About </a> </div>
+                <div> <a href="{{ route('home1') }}">  Shop  </a> </div>
+                <div> <a href="/cart"> Cart </a> </div>
+                <div> <a href="order.html"> Order </a> </div>
+            </div>
+        <div class="dropdown">
+            <div class="user dropbtn"> <a href="{{ route('user.profile') }}"><img src="{{ asset('images/user.jpg') }}" width="35pixels" height="35pixels"></a> </div>
+            <div class="dropdown-content">
+                <a href="{{ route('user.profile') }}">My Account</a>
+                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                <form id="logout-form" method="POST" action="{{ route('logout') }}">
+                    @csrf    
+                </form>
+            </div>
+        </div>
+        </div>
+
         <br><br>
         <div class="container">
             <div class="user_card">
@@ -72,30 +94,26 @@
                 @if(Session::has('message'))
                     <div class="alert alert-success" role="alert">{{Session::get('message')}}</div>
                 @endif
-                <form wire:submit.prevent="updateProfile">
-                    <div class="col-md-9">
-                            @if($newimage)
-                                <img src="{{$newimage->temporaryUrl()}}" width="100%" />
-                            @elseif($image)
-                                <img src="{{asset('images/profile')}}/{{$user->profile->image}}" width="100%" />
-                            @else
-                                <img src="{{asset('images/profile/default.png')}}" width="100%" />
-                            @endif
-                            <input type="file" class="form-control" wire:model="newimage"/>
-                    </div>
+
+                <form action="/updateprofile" method="POST" enctype="multipart/form-data">
+
+                    {{ csrf_field() }}
                     <br><br>
                     <div class="bahagi">
+                        <div> Profile Picture </div>
+                        <input type="file" class="form-control" style="background-color: white; border: none" name="image" value="{{ $user->profile->image }}"/>
                         <div> Full name </div>
-                        <input type="text" class="form-control" wire:model="name"/>
+                        <input type="text" class="form-control" name="name" value=" {{ $user->name }} "/>
                         <div> Email </div>
-                        <input type="text" class="form-control" wire:model="email" disabled/>
+                        <input type="text" class="form-control" name="email" value="{{ $user->email }}" disabled/>
                         <div> Phone Number </div>
-                        <input type="text" class="form-control" wire:model="mobile"/>
+                        <input type="text" class="form-control" name="phone" value="{{ $user->profile->phone }}"/>
                         <div> Address </div>
-                        <input type="text" class="form-control" wire:model="address"/>
-                    </div><br><br>
+                        <input type="text" class="form-control" name="address" value="{{ $user->profile->address }}"/>
+                    <br><br>
                     
                     <div style="display: flex; justify-content: flex-end"><button type="submit"> Update Profile </button></div>
+                    </div>
                 </form>
             </div>
         </div>

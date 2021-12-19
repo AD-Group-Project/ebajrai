@@ -39,7 +39,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
     Route::get('/admin/editshop/{id}', [AdminEditShop::class, 'editForm']);
     Route::post('/editshop/{id}', [AdminEditShop::class, 'editShop']);
     Route::get('/user/profile',UserProfileComponent::class)->name('user.profile');
-    Route::get('/user/profile/edit',UserEditProfileComponent::class)->name('user.editprofile');
+    Route::get('/user/editprofile/{id}', 'App\Http\Controllers\UserEditProfile@userEditForm');
+    Route::post('/updateprofile', 'App\Http\Controllers\UserEditProfile@updateProfile');
     Route::get('/admin/addproduct', [AdminEditProduct::class, 'addForm'])->name('admin.add');
     Route::post('/addproduct', [AdminEditProduct::class, 'addProduct'])->name('addproduct');
     Route::get('/admin/editproduct/{id}', [AdminEditProduct::class, 'editForm']);

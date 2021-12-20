@@ -1,8 +1,3 @@
-
-<div>
-    {{-- If you look to others for fulfillment, you will never truly be fulfilled. --}}
-</div>
-
 <!DOCTYPE html>
     <html> 
     <head>
@@ -65,22 +60,17 @@
                                         <button class="delete">Delete product</button>
                                 </form>
                             </div>
-                            <script>
-                                function myFunction() {
-                                    alert('Hello');
-                                }
-                            </script>
                          @elseif (Auth::user()->utype === 'USR')
                             <form class="item_input"> 
                                 <input type="number" name="chicken" size="5" value="1" class="quantity">
-                                <button name="add" onclick="addedtocart()"> Add </button>
+                                <button name="add" wire:click.prevent="store({{$product->id}},'{{$product->name}}',{{$product->price}})"> Add </button>
                             </form>
                         @endauth
-                         @else 
-                         <form class="item_input"> 
-                            <input type="number" name="chicken" size="5" value="1" class="quantity">
-                            <button name="add" onclick="addedtocart()"> Add </button>
-                        </form>
+                        @else 
+                            <form class="item_input" action="{{route('login')}}" onsubmit="return confirm('You have to login first before adding product to cart!')"> 
+                                <input type="number" name="chicken" size="5" value="1" class="quantity">
+                                <button name="add"> Add </button>
+                            </form>
                         @endif
                     </div>
 

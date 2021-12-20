@@ -25,7 +25,7 @@ use App\Http\Controllers\AdminEditProduct;
 */
 
 Route::get('/', HomeComponent::class)->name('home1');
-Route::get('/cart', CartComponent::class);
+Route::get('/cart', CartComponent::class)->name('product.cart');;
 Route::get('/product-category/{category_slug}', CategoryComponent::class)->name('product.category');
 Route::get('/product/{slug}', DetailsComponent::class)->name('product.details');
 
@@ -41,6 +41,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
     Route::get('/user/profile',UserProfileComponent::class)->name('user.profile');
     Route::get('/user/editprofile/{id}', 'App\Http\Controllers\UserEditProfile@userEditForm');
     Route::post('/updateprofile', 'App\Http\Controllers\UserEditProfile@updateProfile');
+    Route::get('/deleteprofile/{id}', 'App\Http\Controllers\UserEditProfile@deleteProfile');
     Route::get('/admin/addproduct', [AdminEditProduct::class, 'addForm'])->name('admin.add');
     Route::post('/addproduct', [AdminEditProduct::class, 'addProduct'])->name('addproduct');
     Route::get('/admin/editproduct/{id}', [AdminEditProduct::class, 'editForm']);

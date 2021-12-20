@@ -54,16 +54,16 @@
                         <br> <br> <hr>
                     @elseif (Auth::user()->utype === 'USR')
                         <form class="item_input_des" style="text-align: right"> 
-                            <input type="number" name="apple" size="5" value="1" class="quantity_des">
-                            <button class="button_des" name="add" onclick="addedtocart()"> Add to Cart </button>
+                            <input type="number" name="qty" size="5" value="1" class="quantity_des">
+                            <button class="button_des" name="add" wire:click.prevent="store({{$product->id}},'{{$product->name}}',{{$product->price}})"> Add to Cart </button>
                             <br>
                             Quantity: {{$product->quantity}} pcs available <span style="color:red"> (*{{$product->stock_status}}) </span>
                         </form>
                 @endauth
                     @else
-                        <form class="item_input_des" style="text-align: right"> 
+                        <form class="item_input_des" style="text-align: right" action="{{route('login')}}" onsubmit="return confirm('You have to login first before adding product to cart!')"> 
                             <input type="number" name="apple" size="5" value="1" class="quantity_des">
-                            <button class="button_des" name="add" onclick="addedtocart()"> Add to Cart </button>
+                            <button class="button_des" name="add"> Add to Cart </button>
                             <br>
                             Quantity: {{$product->quantity}} pcs available <span style="color:red"> (*{{$product->stock_status}}) </span>
                         </form>

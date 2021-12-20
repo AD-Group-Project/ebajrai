@@ -56,11 +56,11 @@
                 border-radius: 10px;
             }
 
-            button {
-                background-color: #53B175;
+            #del{
+                background-color: red;
                 color: white;
-                border: 2px solid #53B175;
-                width: 40%;
+                border: 2px solid red;
+                width: 100%;
                 height: 35px;
                 border-radius: 10px;
             }
@@ -106,7 +106,10 @@
                     <br><br>
                 
                     <form action="/user/editprofile/{{ $user->id }}">
-                        <div style="display: flex; justify-content: flex-end"><button type="submit"> Update Profile </button></div>
+                        <div style="position: relative; left:160px"><button type="submit"> Update Profile </button></div>
+                    </form>
+                    <form action="/deleteprofile/{{ $user->id }}" onsubmit="return confirm('Are you sure you want to delete this account?')">
+                        <div style="position: relative; bottom:60px"><button id="del" type="submit" width="100000px"> Delete Account </button></div>
                     </form>
                 </div>
             </div>

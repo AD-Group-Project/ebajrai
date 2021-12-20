@@ -7,6 +7,7 @@ use Livewire\Component;
 use Livewire\WithPagination;
 use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
+use Cart;
 
 class CategoryComponent extends Component
 {
@@ -15,6 +16,13 @@ class CategoryComponent extends Component
     public function mount($category_slug)
     {
         $this->category_slug = $category_slug;
+    }
+
+    public function store($product_id,$product_name,$product_price)
+    {
+        Cart::add($product_id,$product_name,1,$product_price)->associate('App\Models\Product');
+        session()->flash('success_message','Item added in Cart');
+        return redirect()->route('product.cart');
     }
 
     use WithPagination;

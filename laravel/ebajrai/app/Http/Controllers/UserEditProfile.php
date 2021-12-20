@@ -51,4 +51,11 @@ class UserEditProfile extends Controller
 
         return redirect('/user/profile')->with('message', 'Profile has been updated');
     }
+
+    public function deleteProfile($id)
+    {
+        User::destroy($id);
+
+        return redirect('/')->with('message', 'Account has been deleted succesfully!');
+    }
 }

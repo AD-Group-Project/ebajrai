@@ -53,7 +53,7 @@
         </div>
         
         <br><br>
-        
+
         @if(Session::has('success_message'))
             <div class="alert alert-success d-flex justify-content-center">
                 {{Session::get('success_message')}}
@@ -83,16 +83,16 @@
             @endforeach
 
         </div> <br>     
-        @else
-            <p style="text-align:center; color:red">No item in cart</p>
-        @endif
 
         <div class="cart">
             <div></div><div></div>
             <div> <b style="font-size: 18px;">Total : </b>RM {{Cart::subtotal()}} </div>
-            <div style="grid-column: 4/6"> <a href="checkout.html" style="background-color: #53B175; padding: 12px 90px 12px 90px"> Check out </a> </div>
+            <div style="grid-column: 4/6"> <a href="#" wire:click.prevent="setAmountForCheckout()" style="background-color: #53B175; padding: 12px 90px 12px 90px"> Check out </a> </div>
         </div>
-    
+        @else
+            <h1 style="text-align:center; color:red">No item in cart</h1>
+            <div style='padding-top:30px; display:flex; justify-content:center;'><a href="{{ route('home1') }}" style="border-radius:10%; background-color: #53B175; padding: 12px 18px 12px 18px">Shop Now!</a></div>
+        @endif
     </body>
 
 </html>

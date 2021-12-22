@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\HomeComponent;
 use App\Http\Livewire\CartComponent;
+use App\Http\Livewire\CheckoutComponent;
 use App\Http\Livewire\CategoryComponent;
 use App\Http\Livewire\DetailsComponent;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
@@ -28,6 +29,8 @@ Route::get('/', HomeComponent::class)->name('home1');
 Route::get('/cart', CartComponent::class)->name('product.cart');;
 Route::get('/product-category/{category_slug}', CategoryComponent::class)->name('product.category');
 Route::get('/product/{slug}', DetailsComponent::class)->name('product.details');
+Route::get('/checkout', CheckoutComponent::class)->name('checkout'); 
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
@@ -46,6 +49,6 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
     Route::post('/addproduct', [AdminEditProduct::class, 'addProduct'])->name('addproduct');
     Route::get('/admin/editproduct/{id}', [AdminEditProduct::class, 'editForm']);
     Route::post('/editproduct/{id}', [AdminEditProduct::class, 'editProduct']);
-    Route::get('/admin/deleteproduct/{slug}', [AdminEditProduct::class, 'deleteProduct']);    
+    Route::get('/admin/deleteproduct/{slug}', [AdminEditProduct::class, 'deleteProduct']);   
 });
 

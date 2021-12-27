@@ -49,17 +49,13 @@
             }
 
             .paymenthod {
-                display: grid;
                 width: 460px;
-                grid-template-columns: 230px 230px;
-                grid-template-rows: 1fr;
                 background-color: white;
                 margin: auto;
                 border: 1px solid #E5E4E2;
                 border-radius: 0 0 0.8em 0.8em;
                 padding: 20px 20px 20px 20px;
                 line-height: 2.0;
-                grid-row-gap: 20px;
             }
             
             .atas {
@@ -73,30 +69,27 @@
                 background-color: #53B175;
                 color: white;
                 border: 2px solid white;
-                width: 16%;
-                height: 30px;
-                border-radius: 50%;
+                width: 420px;
+                height: 50px;
+                font-size: 15px;
+                border-radius: 5px;
             }
 
-            .btn{
-                background-color: #53B175; 
-                padding: 12px 120px 12px 120px; 
-                border: none; 
+            a:hover{
+                text-decoration: none;
                 color: white;
-                font-family: serif;
-                font-size: 16px;
             }
 
-            .btn:hover {text-decoration: underline;}
             .bawah {border-radius: 0 0 0.8em 0.8em}
-            .satu { grid-area: 1/1/2/3; padding: 0 0 0 20px;}
             .option { width: 460px; }
+            .kotakinput{ border: 1px solid #e5e4e2;}
         
         </style>
-    
     </head>
     
     <body>
+
+        <script src="https://www.paypal.com/sdk/js?client-id=Adi4zh4W6NoQb5-3IZJIouPvE96lHshtseUhmUxKH5QvrpaRJM6H0lzzHTZsiB4KqmLsjSnzb5ysKS37&currency=USD"></script>
         
         <div class="title">
             <b> Checkout </b>
@@ -139,27 +132,6 @@
         <form name="form">
         <div class="kotak">
         <div>
-            <div class="base atas option"> Payment Method </div>
-            
-            <div class="paymenthod">
-                <div class="satu"> Please choose your payment method : <br></div> 
-                <div>  
-                    <input type="radio" name="pay" value="cash">  
-                    <img src="images/cash.jpg" width="170pixels"> 
-                </div>  
-                <div> 
-                <img src="images/o9.jpg" width="170pixels"> <br>
-                    
-                <input type="radio" name="pay" value="maybank"> Maybank2u <br>
-                <input type="radio" name="pay" value="cimb"> CIMB Clicks <br>
-                <input type="radio" name="pay" value="rhb"> RHB Now <br>
-                <br>
-                </div>
-            </div> 
-                
-        </div>
-               
-        <div>
             <div class="base atas option"> Delivery Method </div>
             
             <div class="paymenthod">
@@ -172,11 +144,55 @@
                     <input type="radio" name="del" value="delivery"> 
                     <img src="images/delivery.jpg" width="170pixels">
                 </div>
-                <div style="padding: 33px 0px 0px 62px"> <input type="button" onClick="isEmpty()" value="Confirm" class="btn"> </div>
             </div> 
             
         </div>
+        <div>
+            <div class="base atas option"> Payment Method </div>
+            
+            <div class="paymenthod">
+                <div class="satu"> Please choose your payment method : <br><br></div> 
+                <div style="margin-bottom: 11px"><button> <a href="{{ route('acceptOrder') }}">Place Order | COD</a> </button> </div>
+                <div id="paypal-button-container"></div>
+            </div> 
+                
+        </div>
         </div></form>
+
+        <script>
+            paypal.Buttons({
+      
+              // Sets up the transaction when a payment button is clicked
+              createOrder: function(data, actions) {
+                return actions.order.create({
+                  purchase_units: [{
+                    amount: {
+                      value: '{{Cart::subtotal()}}' 
+                    }
+                  }]
+                });
+              },
+      
+              // Finalize the transaction after payer approval
+              onApprove: function(data, actions) {
+                return actions.order.capture().then(function(orderData) {
+                  // Successful capture! For dev/demo purposes:
+                      console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                      var transaction = orderData.purchase_units[0].payments.captures[0];
+                      alert('Thank you for your payment!');
+                      actions.redirect("{{ route('acceptOrder') }}");
+      
+                  // When ready to go live, remove the alert and show a success message within this page. For example:
+                  // var element = document.getElementById('paypal-button-container');
+                  // element.innerHTML = '';
+                  // element.innerHTML = '<h3>Thank you for your payment!</h3>';
+                  // Or go to another URL:  actions.redirect('thank_you.html');
+                });
+              }
+            }).render('#paypal-button-container');
+      
+          </script>
     </body>
 
 </html>
+

@@ -11,24 +11,25 @@ use DB;
 class AdminEditShop extends Controller
 {
 
-    function editForm($id)
+    function editForm()
     {
-        $shop = DB::select('select * from shop  where id = 1');
+        $shop = Shop::where('id', 1)->first();
         return view('edit.editshop', ['shop'=>$shop]);
     }
 
-    function editShop(Request $request, $id)
+    function editShop(Request $request)
     {
-        $desc = $request->input('desc');
-        $monThu = $request->input('monThu');
-        $friday = $request->input('friday');
-        $saturday = $request->input('saturday');
-        $location = $request->input('location');
-        $phoneNum = $request->input('phoneNum');
-        $fax = $request->input('fax');
-        
+        $shop = Shop::where('id', 1)->first();
 
-        DB::update('update shop set desc=?,monThu=?,friday=?,saturday=?,location=?,phoneNum=?,fax=?', [$desc,$monThu,$friday,$saturday,$location,$phoneNum,$fax]);
-        return redirect()->back()->with('message', 'Shop\'s About has been updated succesfully!');
+        $shop->desc = $request->input('desc');
+        $shop->monThu = $request->input('monThu');
+        $shop->friday = $request->input('friday');
+        $shop->saturday = $request->input('saturday');
+        $shop->location = $request->input('location');
+        $shop->phoneNum = $request->input('phoneNum');
+        $shop->fax = $request->input('fax');
+        
+        $shop->save();
+        return redirect('/aboutus')->with('message', 'Shop\'s About has been updated succesfully!');
     }
 }

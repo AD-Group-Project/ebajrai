@@ -109,7 +109,7 @@
                         <div> Phone Number </div>
                         <input type="text" class="form-control" name="phone" value="{{ $user->profile->phone }}"/>
                         <div> Address </div>
-                        <input type="text" class="form-control" name="address" value="{{ $user->profile->address }}"/>
+                        <textarea class="form-control" name="address" rows="5">{{ $user->profile->address }}</textarea>
                     <br><br>
                     
                     <div style="display: flex; justify-content: flex-end"><button type="submit"> Update Profile </button></div>

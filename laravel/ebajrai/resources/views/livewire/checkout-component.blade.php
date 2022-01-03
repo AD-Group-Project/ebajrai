@@ -48,6 +48,14 @@
                 margin: auto;
             }
 
+            .kotak1 {
+                background-color: #f5f4f2;
+                width: 85%;
+                padding: 8px 10px 10px 10px;
+                border: 1px solid gainsboro;
+                border-radius: 0.5em;
+            }
+
             .paymenthod {
                 display: grid;
                 width: 460px;
@@ -85,6 +93,38 @@
                 color: white;
                 font-family: serif;
                 font-size: 16px;
+            }
+
+            .container {
+                display: flex;
+                justify-content: center;
+            }
+
+            .user_card{
+                height: 600px;
+                width: 1100px;
+                padding: 20px 80px 20px 80px;
+                background-color: white;
+                border-radius: 5px;
+            }
+
+            .bahagi {
+                border: 3px solid #fff;
+            }
+
+            .besar{
+                height: 60px;
+                overflow: auto;
+            }
+
+            .bahagi1{
+                width: 50%;
+                float: left;
+                padding: 20px;
+            }
+
+            .detail{
+                padding-top: 15px;
             }
 
             .btn:hover {text-decoration: underline;}
@@ -134,9 +174,57 @@
         <div class="cart">
             <div></div><div></div>
             <div style="grid-column: 4/5"> <b style="font-size: 18px;">Total : </b>RM {{Cart::subtotal()}} </div>
+            {{-- @if (Session::has('checkout'))
+                <div style="grid-column: 4/5"> <b style="font-size: 18px;">Total : </b>RM {{Session::get('checkout')['total']}} </div>
+            @else
+                <div style="grid-column: 4/5"> <b style="font-size: 18px;">Total : </b>RM tok tubik </div>
+            @endif --}}
         </div><br>
         
-        <form name="form">
+        <form action="submitOrder" method="POST">
+        <div class="container">
+            <div class="user_card">
+                <h1 style="text-align: center"> Shipping Details </h1>
+                <hr class="mb-3">
+                <div class="bahagi">
+                    <div class="bahagi1">
+                        <div class="detail"> First Name </div>
+                        <input type="text" class="form-control" name="firstname" placeholder="Your first name" required/>
+                        @error('firstname') <span class="text-danger">{{ $message }}</span> @enderror
+                        <div class="detail"> Email </div>
+                        <input type="text" class="form-control" name="email" placeholder="Your email address" required/>
+                        @error('email') <span class="text-danger">{{ $message }}</span> @enderror
+                        <div class="detail"> Address </div>
+                        <input type="text" class="form-control" name="line1" placeholder="Street / Apartment number" required/>
+                        @error('line1') <span class="text-danger">{{ $message }}</span> @enderror
+                        <div class="detail"> State </div>
+                        <input type="text" class="form-control" name="state" placeholder="State" required/>
+                        @error('state') <span class="text-danger">{{ $message }}</span> @enderror
+                        <div class="detail"> Zipcode </div>
+                        <input type="text" class="form-control" name="zipcode" placeholder="Zipcode" required/>
+                        @error('zipcode') <span class="text-danger">{{ $message }}</span> @enderror
+                    </div>
+                        <div class="bahagi1">
+                        <div class="detail"> Last name </div>
+                        <input type="text" class="form-control" name="lastname" placeholder="Your last name" required/>
+                        @error('lastname') <span class="text-danger">{{ $message }}</span> @enderror
+                        <div class="detail"> Mobile </div>
+                        <input type="text" class="form-control" name="mobile" placeholder="Your phone number" required/>
+                        @error('mobile') <span class="text-danger">{{ $message }}</span> @enderror
+                        <div class="detail"> City </div>
+                        <input type="text" class="form-control" name="city" placeholder="City" required/>
+                        @error('city') <span class="text-danger">{{ $message }}</span> @enderror
+                        <div class="detail"> Country </div>
+                        <input type="text" class="form-control" name="country" placeholder="Country" required/>
+                        @error('country') <span class="text-danger">{{ $message }}</span> @enderror
+                        
+                    </div>
+                    <br><br><br>
+                </div>
+            </div>
+        </div>
+        <br><br>
+
         <div class="kotak">
         <div>
             <div class="base atas option"> Payment Method </div>
@@ -144,17 +232,17 @@
             <div class="paymenthod">
                 <div class="satu"> Please choose your payment method : <br></div> 
                 <div>  
-                    <input type="radio" name="pay" value="cash">  
+                    <input type="radio" name="paymentmode" id="payment-method-bank" value="cod">   Cash on Delivery
                     <img src="images/cash.jpg" width="170pixels"> 
                 </div>  
                 <div> 
                 <img src="images/o9.jpg" width="170pixels"> <br>
                     
-                <input type="radio" name="pay" value="maybank"> Maybank2u <br>
-                <input type="radio" name="pay" value="cimb"> CIMB Clicks <br>
-                <input type="radio" name="pay" value="rhb"> RHB Now <br>
+                <input type="radio" name="paymentmode" id="payment-method-visa" value="card"> Debit / Credit Card <br>
+                <input type="radio" name="paymentmode" id="payment-method-paypal" value="paypal"> Paypal <br>
                 <br>
                 </div>
+                @error('paymentmode') <span class="text-danger">{{ $message }}</span> @enderror
             </div> 
                 
         </div>
@@ -172,7 +260,7 @@
                     <input type="radio" name="del" value="delivery"> 
                     <img src="images/delivery.jpg" width="170pixels">
                 </div>
-                <div style="padding: 33px 0px 0px 62px"> <input type="button" onClick="isEmpty()" value="Confirm" class="btn"> </div>
+                <div style="padding: 33px 0px 0px 62px"> <input type="button" value="Confirm" class="btn"> </div>
             </div> 
             
         </div>

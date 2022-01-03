@@ -22,7 +22,6 @@
             }
 
             .user_card{
-                height: 700px;
                 width: 600px;
                 padding: 20px 80px 20px 80px;
                 background-color: white;
@@ -42,7 +41,7 @@
             .kotak {
                 background-color: #f5f4f2;
                 width: 85%;
-                padding: 10px;
+                padding: 8px 10px 10px 10px;
                 border: 1px solid gainsboro;
                 border-radius: 0.5em;
             }
@@ -63,6 +62,11 @@
                 width: 100%;
                 height: 35px;
                 border-radius: 10px;
+            }
+
+            .besar{
+                height: 60px;
+                overflow: auto;
             }
 
             .col-md-9{
@@ -102,14 +106,14 @@
                     <div> Phone Number </div>
                     <div class="kotak">{{$user->profile->phone}}</div>
                     <div> Address </div>
-                    <div class="kotak">{{$user->profile->address}}</div>
-                    <br><br>
+                    <div class="kotak besar">{{$user->profile->address}}</div>
+                    <br><br><br>
                 
                     <form action="/user/editprofile/{{ $user->id }}">
-                        <div style="position: relative; left:160px"><button type="submit"> Update Profile </button></div>
+                        <div style="position: relative; left:160px; top:23px;"><button type="submit"> Update Profile </button></div>
                     </form>
                     <form action="/deleteprofile/{{ $user->id }}" onsubmit="return confirm('Are you sure you want to delete this account?')">
-                        <div style="position: relative; bottom:60px"><button id="del" type="submit" width="100000px"> Delete Account </button></div>
+                        <div style="position: relative; bottom:60px"><button id="del" type="submit"> Delete Account </button></div>
                     </form>
                 </div>
             </div>

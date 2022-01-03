@@ -47,7 +47,7 @@
             <img src="{{ asset('images/logo.png') }}" width="80pixels" height="80pixels">
             <div style="padding-top: 25px"> E-Bajrai Mini Market </div>
             <div class="menu">
-                <div> <a href="{{ route('admin.about') }}"> About </a> </div>
+                <div> <a href="{{ route('aboutshop') }}"> About </a> </div>
                 <div> <a href="{{ route('home2') }}"> Products </a> </div>
                 <div> <a href=""> Orders </a> </div>
                 <div> <a href=""> Analytics </a> </div>
@@ -74,24 +74,24 @@
                         {{ session()->get('message') }}
                     </div>
                 @endif
-                <div><form method="post" action="/editshop/{{ $shop[0]->id }}">
-                        @csrf
+                <div><form method="post" action="/editshop">
+                        {{ csrf_field() }}
             
                         <b>Description:</b><br>
-                        <textarea name="desc"> {{ $shop[0]->desc }}
+                        <textarea name="desc" rows="5" cols="50"> {{ $shop->desc }}
                         </textarea>
                         <br><br>
 
                         <b>Operating Date and Time:</b><br>
-                        <div class="kotak">Monday-Thursday: <input type="text" name="monThu" value="{{ $shop[0]->monThu }}"><br></div>
-                        <div class="kotak">Friday: <textarea name="friday"> {{ $shop[0]->friday }} </textarea></div>
-                        <div class="kotak">Saturday: <input type="text" name="saturday" value="{{ $shop[0]->saturday }}"><br></div>
-                        <div class="kotak">Location: <textarea name="location"> {{ $shop[0]->location }} </textarea></div>
+                        <div class="kotak">Monday-Thursday: <input type="text" name="monThu" value="{{ $shop->monThu }}"><br></div>
+                        <div class="kotak">Friday: <textarea name="friday"> {{ $shop->friday }} </textarea></div>
+                        <div class="kotak">Saturday: <input type="text" name="saturday" value="{{ $shop->saturday }}"><br></div>
+                        <div class="kotak">Location: <textarea name="location"> {{ $shop->location }} </textarea></div>
                         <br><br>
 
                         <b>Contact Us:</b><br>
-                        <div class="kotak">Phone Number: <input type="text" name="phoneNum" value="{{ $shop[0]->phoneNum }}"><br></div>
-                        <div class="kotak">Fax: <input type="text" name="fax" value="{{ $shop[0]->fax }}"></div>
+                        <div class="kotak">Phone Number: <input type="text" name="phoneNum" value="{{ $shop->phoneNum }}"><br></div>
+                        <div class="kotak">Fax: <input type="text" name="fax" value="{{ $shop->fax }}"></div>
                         <br><br>
 
                         <div class="submitButton"><button type="submit"> Update Details </button></div>

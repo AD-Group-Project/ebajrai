@@ -254,7 +254,7 @@
                     <input type="radio" name="del" value="delivery">
                     <img src="images/delivery.jpg" width="170pixels">
                 </div>
-                <div style="padding: 33px 0px 0px 62px"> <input type="button" value="Confirm" class="btn"> </div>
+                {{-- <div style="padding: 33px 0px 0px 62px"> <input type="button" value="Confirm" class="btn"> </div> --}}
             </div>
 
         </div>

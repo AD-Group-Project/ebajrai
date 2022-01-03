@@ -85,7 +85,7 @@
             <b> About Us </b>
         </div>
         @if(session()->has('message'))
-            <div class="alert alert-success">
+            <div class="alert alert-success d-flex justify-content-center">
                 {{ session()->get('message') }}
             </div>
           @endif

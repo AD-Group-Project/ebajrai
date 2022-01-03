@@ -220,7 +220,7 @@
         <br><br>
 
         <div class="kotak">
-        <div>
+        {{-- <div>
             <div class="base atas option"> Payment Method </div>
 
             <div class="paymenthod">
@@ -239,7 +239,7 @@
                 @error('paymentmode') <span class="text-danger">{{ $message }}</span> @enderror
             </div>
 
-        </div>
+        </div> --}}
 
         <div>
             <div class="base atas option"> Delivery Method </div>

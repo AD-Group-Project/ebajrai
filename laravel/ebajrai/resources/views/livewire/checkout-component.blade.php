@@ -181,7 +181,8 @@
                 <h1 style="text-align: center"> Shipping Details </h1>
                 <hr class="mb-3">
                 <div class="bahagi">
-                    <div class="bahagi1">
+                    {{ $user->profile->address}}
+                    {{-- <div class="bahagi1">
                         <div class="detail"> First Name </div>
                         <input type="text" class="form-control" name="firstname" placeholder="Your first name" required/>
                         @error('firstname') <span class="text-danger">{{ $message }}</span> @enderror
@@ -212,7 +213,7 @@
                         <input type="text" class="form-control" name="country" placeholder="Country" required/>
                         @error('country') <span class="text-danger">{{ $message }}</span> @enderror
 
-                    </div>
+                    </div> --}}
                     <br><br><br>
                 </div>
             </div>
@@ -247,7 +248,7 @@
             <div class="paymenthod">
                 <div class="satu"> Please choose your delivery method : </div>
                 <div>
-                    <input type="radio" name="del" value="pickup">
+                    <input type="radio" name="del" value="pickup" checked required>
                     <img src="images/pickup.jpg" width="170pixels">
                 </div>
                 <div>

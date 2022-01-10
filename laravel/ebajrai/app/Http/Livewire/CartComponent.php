@@ -5,12 +5,18 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use Cart;
 use Illuminate\Support\Facades\Auth;
+use DB;
 
 class CartComponent extends Component
 {
     public function increaseQuantity($rowId)
     {
         $product = Cart::get($rowId);
+        // if((DB::select('select quantity from products where id = ?', [$product->id]))==0)
+        // {
+        //     session()->flash('success_message','You have reached the maximum quantity available for this item!');
+        //     return redirect()->route('product.cart');
+        // }
         $qty = $product->qty + 1;
         Cart::update($rowId, $qty);
         return redirect()->route('product.cart');
@@ -58,7 +64,7 @@ class CartComponent extends Component
             'tax' => 0,
             'total' => Cart::instance('cart')->subtotal()
         ]);
-        return redirect('checkout');
+        return redirect('/checkout');
         // return back();
     }
 

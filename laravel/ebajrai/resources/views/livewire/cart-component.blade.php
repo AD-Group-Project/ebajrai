@@ -41,6 +41,15 @@
                 height: 30px;
                 border-radius: 50%;
             }
+
+            .checkout{
+                grid-column: 4/6;
+                background-color: #53B175;
+                border: none;
+                width: 100%;
+                height: 40px;
+                border-radius: 3%;
+            }
         
         </style>
     
@@ -87,7 +96,10 @@
         <div class="cart">
             <div></div><div></div>
             <div> <b style="font-size: 18px;">Total : </b>RM {{Cart::subtotal()}} </div>
-            <div style="grid-column: 4/6"> <a href="#" wire:click.prevent="setAmountForCheckout()" style="background-color: #53B175; padding: 12px 90px 12px 90px"> Check out </a> </div>
+            {{-- <div style="grid-column: 4/6"> <a href="#" wire:click.prevent="setAmountForCheckout()" style="background-color: #53B175; padding: 12px 90px 12px 90px"> Check out </a> </div> --}}
+            <form action="/checkout">
+                <button class="checkout" type="submit"> Check out </button>
+            </form>
         </div>
         @else
             <h1 style="text-align:center; color:red">No item in cart</h1>

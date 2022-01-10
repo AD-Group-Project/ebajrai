@@ -14,6 +14,8 @@ use App\Http\Livewire\User\UserProfileComponent;
 use App\Http\Livewire\User\UserEditProfileComponent;
 use App\Http\Controllers\AdminAddProduct;
 use App\Http\Controllers\AdminEditProduct;
+use App\Http\Controllers\Checkout;
+use App\Http\Controllers\Payment;
 use App\Http\Livewire\AboutShopComponent;
 use App\Http\Livewire\ThankyouComponent;
 
@@ -32,10 +34,14 @@ Route::get('/', HomeComponent::class)->name('home1');
 Route::get('/cart', CartComponent::class)->name('product.cart');;
 Route::get('/product-category/{category_slug}', CategoryComponent::class)->name('product.category');
 Route::get('/product/{slug}', DetailsComponent::class)->name('product.details');
-Route::get('/checkout', CheckoutComponent::class)->name('checkout');
-Route::post('/checkout/placeorder', [CheckoutComponent::class, 'placeOrder'])->name('submitOrder');
+// Route::get('/checkout', CheckoutComponent::class)->name('checkout');
+Route::get('/checkout', [Checkout::class, 'render']);
+Route::post('/submitOrder', [Checkout::class, 'submitOrder']);
+Route::get('/payment/{id}', [Payment::class, 'paymentPage'])->name('payment');
+// Route::post('/checkout/placeorder', [CheckoutComponent::class, 'placeOrder'])->name('submitOrder');
 Route::get('/aboutus', AboutShopComponent::class)->name('aboutshop');
 Route::get('/thankyou', ThankyouComponent::class)->name('thankyou');
+Route::get('/payment/confirmation/{id}', [Payment::class, 'changeStatus'])->name('paymentConfirmation');
 Route::get('/acceptOrder', AcceptOrderComponent::class)->name('acceptOrder'); 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

@@ -194,6 +194,8 @@ class CheckoutComponent extends Component
     public function render()
     {
         $this->verifiyForCheckout();
-        return view('livewire.checkout-component')->layout("layouts.base");
+        $user = User::find(Auth::user()->id);
+        $profile = Profile::where('user_id',Auth::user()->id)->first();
+        return view('livewire.checkout-component',['user'=>$user])->layout("layouts.base");
     }
 }

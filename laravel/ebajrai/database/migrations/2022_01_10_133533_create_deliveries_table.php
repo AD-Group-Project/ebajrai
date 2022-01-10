@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateShippingsTable extends Migration
+class CreateDeliveriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,15 @@ class CreateShippingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('shippings', function (Blueprint $table) {
+        Schema::create('deliveries', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('order_id')->unsigned();
             $table->bigInteger('user_id')->unsigned();
-            $table->string('name');
-            $table->string('mobile');
-            $table->string('email');
-            $table->string('address');
+            $table->bigInteger('order_id')->unsigned();
+            $table->string('deliveryType')->default('pickup');
+            $table->decimal('totalWithPostage');
             $table->timestamps();
-            $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
         });
     }
 
@@ -34,6 +32,6 @@ class CreateShippingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('shippings');
+        Schema::dropIfExists('deliveries');
     }
 }

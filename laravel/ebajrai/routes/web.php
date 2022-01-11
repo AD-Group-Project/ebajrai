@@ -18,6 +18,8 @@ use App\Http\Controllers\Checkout;
 use App\Http\Controllers\Payment;
 use App\Http\Livewire\AboutShopComponent;
 use App\Http\Livewire\ThankyouComponent;
+use App\Http\Livewire\Admin\AdminOrderComponent;
+use App\Http\Livewire\Admin\AdminOrderDetailsComponent;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,4 +64,6 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
     Route::get('/admin/editproduct/{id}', [AdminEditProduct::class, 'editForm']);
     Route::post('/editproduct/{id}', [AdminEditProduct::class, 'editProduct']);
     Route::get('/admin/deleteproduct/{slug}', [AdminEditProduct::class, 'deleteProduct']);
+    Route::get('/admin/orders', AdminOrderComponent::class)->name('admin.order');
+    Route::get('/admin/orders/{order_id}', AdminOrderDetailsComponent::class)->name('admin.orderdetails');
 });

@@ -50,7 +50,7 @@
             <div class="menu">
                 <div> <a href="{{ route('aboutshop') }}"> About </a> </div>
                 <div> <a href="{{ route('home2') }}"> Products </a> </div>
-                <div> <a href=""> Orders </a> </div>
+                <div> <a href="{{ route('admin.order') }}"> Orders </a> </div>
                 <div> <a href=""> Analytics </a> </div>
             </div>
             <div class="dropdown">

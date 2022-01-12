@@ -32,6 +32,7 @@
             .tengah{border-bottom: none; border-radius: 0 0 0 0;}
             .bawah {border-radius: 0 0 0.8em 0.8em}
             .jarak {padding-bottom: 10px;} 
+            a:hover {color:white;}
         </style> 
     </head>
     
@@ -82,6 +83,8 @@
                     <div class="col-md-9 jarak"> RM {{ $order->total }} </div>
                     <div class="col-md-3 jarak"> <b>Order Date</b> </div>
                     <div class="col-md-9 jarak"> {{ $order->created_at }}  </div>
+                    <div class="col-md-3 jarak"> <b>Order Status</b> </div>
+                    <div class="col-md-9 jarak"> {{ $order->status }} </div>
                     <div class="col-md-3 jarak"> <b>Name</b> </div>
                     <div class="col-md-9 jarak"> {{ $order->name }} </div>
                     <div class="col-md-3 jarak"> <b>Phone Number</b> </div>
@@ -90,8 +93,39 @@
                     <div class="col-md-9 jarak"> {{ $order->email }} </div>
                     <div class="col-md-3 jarak"> <b>Address</b> </div>
                     <div class="col-md-9 jarak"> {{ $order->address }} </div>
+                </div><br>
+                <button style="width:200px"> <a href="/admin/updateorder/{{ $order->id }}">Update order status</a> </button>
+        </div><br>
+
+        @if($order->status == "delivered")
+        <div class="base cart atas">
+            Delivery Details
+        </div>
+        <div class="base bawah" style="width: 850px">
+                <div class="row">
+                    <div class="col-md-3 jarak"> <b>Order Status</b> </div>
+                    <div class="col-md-9 jarak"> {{ $order->status }} </div> 
+                    <div class="col-md-3 jarak"> <b>Delivery Date</b> </div>
+                    <div class="col-md-9 jarak"> {{ $order->delivered_date }} </div>
+                    <div class="col-md-3 jarak"> <b>Delivery Courier</b> </div>
+                    <div class="col-md-9 jarak"> {{ $order->courier }} </div>
+                    <div class="col-md-3 jarak"> <b>Tracking Number</b> </div>
+                    <div class="col-md-9 jarak"> {{ $order->trackingno }}  </div>
                 </div>
         </div>
+        @elseif($order->status == "canceled")
+        <div class="base cart atas">
+            Delivery Details
+        </div>
+        <div class="base bawah" style="width: 850px">
+                <div class="row">
+                    <div class="col-md-3 jarak"> <b>Order Status</b> </div>
+                    <div class="col-md-9 jarak"> {{ $order->status }} </div> 
+                    <div class="col-md-3 jarak"> <b>Canceled Date</b> </div>
+                    <div class="col-md-9 jarak"> {{ $order->canceled_date }} </div>
+                </div>
+        </div>
+        @endif
         <br><br>
     </body>
 

@@ -24,9 +24,14 @@ class CreateOrdersTable extends Migration
             $table->string('mobile');
             $table->string('email');
             $table->string('address');
-            $table->enum('status', ['pending','ordered','delivered','canceled'])->default('pending');
+            $table->enum('status', ['pending','ordered','delivered','completed','canceled'])->default('pending');
             $table->string('is_shipping_different')->default(false);
             $table->timestamps();
+            $table->date('delivered_date')->nullable();
+            $table->date('canceled_date')->nullable();
+            $table->date('pickup_date')->nullable();
+            $table->text('courier')->nullable();
+            $table->text('trackingno')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }

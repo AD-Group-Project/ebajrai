@@ -83,6 +83,8 @@
                     <div class="col-md-9 jarak"> RM {{ $order->total }} </div>
                     <div class="col-md-3 jarak"> <b>Order Date</b> </div>
                     <div class="col-md-9 jarak"> {{ $order->created_at }}  </div>
+                    <div class="col-md-3 jarak"> <b>Delivery Method</b> </div>
+                    <div class="col-md-9 jarak"> {{ $order->delivery->deliveryType }} </div>
                     <div class="col-md-3 jarak"> <b>Order Status</b> </div>
                     <div class="col-md-9 jarak"> {{ $order->status }} </div>
                     <div class="col-md-3 jarak"> <b>Name</b> </div>
@@ -123,6 +125,18 @@
                     <div class="col-md-9 jarak"> {{ $order->status }} </div> 
                     <div class="col-md-3 jarak"> <b>Canceled Date</b> </div>
                     <div class="col-md-9 jarak"> {{ $order->canceled_date }} </div>
+                </div>
+        </div>
+        @elseif($order->status == "completed")
+        <div class="base cart atas">
+            Delivery Details
+        </div>
+        <div class="base bawah" style="width: 850px">
+                <div class="row">
+                    <div class="col-md-3 jarak"> <b>Order Status</b> </div>
+                    <div class="col-md-9 jarak"> {{ $order->status }} </div> 
+                    <div class="col-md-3 jarak"> <b>Pickup Date</b> </div>
+                    <div class="col-md-9 jarak"> {{ $order->pickup_date }} </div>
                 </div>
         </div>
         @endif

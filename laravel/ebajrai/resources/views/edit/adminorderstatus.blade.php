@@ -65,7 +65,7 @@
             <div class="menu">
                 <div> <a href="{{ route('admin.about') }}"> About </a> </div>
                 <div> <a href="{{ route('home2') }}"> Products </a> </div>
-                <div> <a href=""> Orders </a> </div>
+                <div> <a href="{{ route('admin.order') }}"> Orders </a> </div>
                 <div> <a href=""> Analytics </a> </div>
             </div>
             <div class="dropdown">
@@ -101,17 +101,18 @@
 
                         <div> <label>Order Status</label> </div> 
                         <div> <select name="status" id="status1" onchange="showHide(this.value)"> 
-                                <option value="ordered"> Ordered </option>
-                                <option value="Delivered"> Delivered </option>
-                                <option value="Canceled"> Canceled </option>
+                                <option value="ordered" @if ($order[0]->status == "ordered") selected @endif> Ordered </option>
+                                <option value="delivered" @if ($order[0]->status == "delivered") selected @endif> Delivered </option>
+                                <option value="completed" @if ($order[0]->status == "completed") selected @endif> Completed </option>
+                                <option value="canceled" @if ($order[0]->status == "canceled") selected @endif> Canceled </option>
                         </select> </div>
                     </div><br>
                     <div class="bahagi" id="hiddenField" style="display: none">
-                        <div> <label>Courier</label> </div>
+                        <div> <label>Delivery Courier</label> </div>
                         <div> <select name="courier"> 
-                            <option value="Pos Laju"> Pos Laju </option>
-                            <option value="J&T Express"> J&T Express </option>
-                            <option value="Ninja Van"> Ninja Van </option>
+                            <option value="Pos Laju" @if ($order[0]->courier == "Pos Laju") selected @endif> Pos Laju </option>
+                            <option value="J&T Express" @if ($order[0]->courier == "J&T Express") selected @endif> J&T Express </option>
+                            <option value="Ninja Van" @if ($order[0]->courier == "Ninja Van") selected @endif> Ninja Van </option>
                         </select> </div>
 
                         <div> <label>Tracking Number</label> </div>
@@ -121,7 +122,7 @@
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
                     <script>
                         function showHide(status1) {
-                            if(status1 == 'Delivered')
+                            if(status1 == 'delivered')
                                 $("#hiddenField").fadeIn();
                             else 
                                 $("#hiddenField").fadeOut();

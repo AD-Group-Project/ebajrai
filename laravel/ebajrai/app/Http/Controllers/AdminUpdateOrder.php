@@ -19,7 +19,7 @@ class AdminUpdateOrder extends Controller
     {
         $status = $request->input('status');
 
-        if($status == "Delivered")
+        if($status == "delivered")
         {
             $delivered_date = Carbon::now();
             $courier = $request->input('courier'); 
@@ -27,10 +27,17 @@ class AdminUpdateOrder extends Controller
             DB::update('update orders set status=?,delivered_date=?,courier=?,trackingno=? where id=?', [$status,$delivered_date,$courier,$trackingno,$id]);
             return redirect()->back()->with('message', 'Order has been updated succesfully!');
         }
-        else if($status == "Canceled")
+        else if($status == "canceled")
         {
             $canceled_date = Carbon::now();
             DB::update('update orders set status=?,canceled_date=? where id=?', [$status,$canceled_date,$id]);
+            return redirect()->back()->with('message', 'Order has been updated succesfully!');
+        }
+
+        else if($status == "completed")
+        {
+            $pickup_date = Carbon::now();
+            DB::update('update orders set status=?,pickup_date=? where id=?', [$status,$pickup_date,$id]);
             return redirect()->back()->with('message', 'Order has been updated succesfully!');
         }
     }

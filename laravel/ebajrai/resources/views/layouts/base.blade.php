@@ -35,7 +35,7 @@
                 <div> <a href="{{ route('aboutshop') }}"> About </a> </div>
                 <div> <a href="{{ route('home1') }}">  Shop  </a> </div>
                 <div> <a href="/cart"> Cart </a> </div>
-                <div> <a href="order.html"> Order </a> </div>
+                <div> <a href="{{ route('user.orders') }}"> Order </a> </div>
             </div>
             
 

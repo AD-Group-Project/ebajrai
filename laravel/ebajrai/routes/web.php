@@ -17,10 +17,11 @@ use App\Http\Controllers\AdminEditProduct;
 use App\Http\Controllers\Checkout;
 use App\Http\Controllers\Payment;
 use App\Http\Livewire\AboutShopComponent;
-use App\Http\Livewire\ThankyouComponent;
 use App\Http\Livewire\Admin\AdminOrderComponent;
 use App\Http\Livewire\Admin\AdminOrderDetailsComponent;
 use App\Http\Controllers\AdminUpdateOrder;
+use App\Http\Livewire\User\UserOrdersComponent;
+use App\Http\Livewire\User\UserOrderDetailsComponent;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,13 +38,10 @@ Route::get('/', HomeComponent::class)->name('home1');
 Route::get('/cart', CartComponent::class)->name('product.cart');;
 Route::get('/product-category/{category_slug}', CategoryComponent::class)->name('product.category');
 Route::get('/product/{slug}', DetailsComponent::class)->name('product.details');
-// Route::get('/checkout', CheckoutComponent::class)->name('checkout');
 Route::get('/checkout', [Checkout::class, 'render']);
 Route::post('/submitOrder', [Checkout::class, 'submitOrder']);
 Route::get('/payment/{id}', [Payment::class, 'paymentPage'])->name('payment');
-// Route::post('/checkout/placeorder', [CheckoutComponent::class, 'placeOrder'])->name('submitOrder');
 Route::get('/aboutus', AboutShopComponent::class)->name('aboutshop');
-Route::get('/thankyou', ThankyouComponent::class)->name('thankyou');
 Route::get('/payment/confirmation/{id}', [Payment::class, 'changeStatus'])->name('paymentConfirmation');
 Route::get('/acceptOrder', AcceptOrderComponent::class)->name('acceptOrder'); 
 
@@ -69,4 +67,6 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
     Route::get('/admin/orders/{order_id}', AdminOrderDetailsComponent::class)->name('admin.orderdetails');
     Route::get('/admin/updateorder/{id}', [AdminUpdateOrder::class, 'updateForm']);
     Route::post('/updateorder/{id}', [AdminUpdateOrder::class, 'updateOrder']);
+    Route::get('/user/orders',UserOrdersComponent::class)->name('user.orders');
+    Route::get('/user/orders/{order_id}',UserOrderDetailsComponent::class)->name('user.orderdetails');
 });

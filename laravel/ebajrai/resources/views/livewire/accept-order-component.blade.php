@@ -40,7 +40,7 @@
         
         <div class="base bawah">
             Your items has been placed and is on it's way to being processed. <br><br>
-            <a href="" style="background-color: #53B175; padding: 12px 60px 12px 60px;"> View my order </a>
+            <a href="{{ route('user.orders') }}" style="background-color: #53B175; padding: 12px 60px 12px 60px;"> View my order </a>
         </div>
     
     </body>

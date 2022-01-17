@@ -18,7 +18,7 @@ class CreateDeliveriesTable extends Migration
             $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('order_id')->unsigned();
             $table->string('deliveryType')->default('pickup');
-            $table->decimal('totalWithPostage');
+            $table->decimal('totalWithPostage')->default(0);
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');

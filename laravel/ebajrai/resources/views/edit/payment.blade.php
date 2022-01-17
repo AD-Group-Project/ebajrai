@@ -60,7 +60,7 @@
                 <div> <a href="shop_details.html"> About </a> </div>
                 <div> <a href="{{ route('home1') }}">  Shop  </a> </div>
                 <div> <a href="/cart"> Cart </a> </div>
-                <div> <a href="order.html"> Order </a> </div>
+                <div> <a href="{{ route('user.orders') }}"> Order </a> </div>
         </div>
         <div class="dropdown">
             <div class="user dropbtn"> <a href="{{ route('user.profile') }}"><img src="{{ asset('images/user.jpg') }}" width="35pixels" height="35pixels"></a> </div>

@@ -27,6 +27,7 @@
             display: grid;
             grid-template-columns: repeat(5, 1fr);
             grid-template-rows: repeat(5, 1fr);
+            border: 1px solid #E5E4E2;
             border-radius: 0.8em;
           }
 

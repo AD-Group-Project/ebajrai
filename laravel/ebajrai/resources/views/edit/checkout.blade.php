@@ -183,7 +183,7 @@
             <img src="{{ asset('images/logo.png') }}" width="80pixels" height="80pixels">
             <div style="padding-top: 25px"> E-Bajrai Mini Market </div>
             <div class="menu">
-                <div> <a href="shop_details.html"> About </a> </div>
+                <div> <a href="{{ route('aboutshop') }}"> About </a> </div>
                 <div> <a href="{{ route('home1') }}">  Shop  </a> </div>
                 <div> <a href="/cart"> Cart </a> </div>
                 <div> <a href="{{ route('user.orders') }}"> Order </a> </div>

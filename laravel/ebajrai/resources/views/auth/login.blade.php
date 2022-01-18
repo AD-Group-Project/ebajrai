@@ -107,7 +107,7 @@
 
                                         <label for="email"> <b>Email Address</b> </label>
                                         <input class="form-control" type="email" name="email" id="frm-login-uname" placeholder="Email address" :value="old('email')" required autofocus>
-
+                                        <br>
                                         <label for="password"> <b>Password</b> </label>
                                         <input class="form-control" type="password" name="password" placeholder="*******" required autocomplete="current-password">
                                         <br>

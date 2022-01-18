@@ -51,7 +51,7 @@
                 <div> <a href="{{ route('aboutshop') }}"> About </a> </div>
                 <div> <a href="{{ route('home2') }}"> Products </a> </div>
                 <div> <a href="{{ route('admin.order') }}"> Orders </a> </div>
-                <div> <a href=""> Analytics </a> </div>
+                <div> <a href="{{ route('admin.sales') }}"> Analytics </a> </div>
             </div>
             <div class="dropdown">
                 <div class="user dropbtn"> <a href="profile.html"><img src="{{ asset('images/user.jpg') }}" width="35pixels" height="35pixels"></a> </div>

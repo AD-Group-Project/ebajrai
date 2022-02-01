@@ -3,12 +3,12 @@
     <head>
         @auth
         @if(Auth::user()->utype === 'ADM')
-          <title> All Items </title>
+          <title> Search Results </title>
         @elseif(Auth::user()->utype === 'USR')
-          <title> E-Bajrai Mini Market | All Items </title>
+          <title> E-Bajrai Mini Market | Search Result </title>
         @endauth
         @else
-            <title> E-Bajrai Mini Market | All Items </title>
+            <title> E-Bajrai Mini Market | Search Result </title>
         @endif
         <style>
             footer
@@ -39,7 +39,7 @@
     <body>
 
     <div class="title">
-                <b> All Item</b>
+                <b> Search results for '{{request()->input('query')}}'</b>
             </div>
             
             <div class="content">
@@ -64,7 +64,7 @@
 
                     @component('components.breadcrumbs')
                         <i class="fa fa-chevron-right breadcrumb-separator"></i>
-                        <span>Search </span>
+                        <span>Search</span>
                     @endcomponent
 
                 </div>
@@ -75,6 +75,18 @@
                             {{ session()->get('message') }}
                         </div>
                     @endif
+
+                    @if(count($errors)>0)
+                        <div class="alert alert-danger">
+                            <ui>
+                                @foreach($errors->all() as $error)
+                                    <li>{{$error}}</li>
+                                @endforeach
+                            </ui>
+                        </div>
+                    @endif
+
+
                     @foreach ($products as $product) 
                     
                     <div class="item">

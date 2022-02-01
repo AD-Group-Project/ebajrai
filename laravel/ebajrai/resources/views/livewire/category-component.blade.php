@@ -51,6 +51,11 @@
                         @endif    
                     @endauth
 
+                    @component('components.breadcrumbs')
+                        <i class="fa fa-chevron-right breadcrumb-separator"></i>
+                        <span>Search</span>
+                    @endcomponent
+
                 </div>
                 
                 

@@ -12,15 +12,18 @@ class SearchComponent extends Component
     public $sorting;
     public $pagessize;
 
-    public $search;
-    public $product_cat;
-    public $product_cat_id;
 
-    public function mount() 
+    public function search(Request $request)
     {
-        $this->sorting = "default";
-        $this->pagessize = 16;
-        $this->fill(request()->only('search', 'product_cat', 'product_cat_id'));
+        $request->validate([
+            'query'=> 'required|min:3',
+        ]);
+
+        $query = $request->input('query');
+
+        $product = Product::where('name', 'like', "%$query%")->get();
+
+        return view ('search-result')->with('products', $products);
     }
 
     public function store($id, $name, $price)
@@ -30,19 +33,4 @@ class SearchComponent extends Component
         return redirect()->route('product.cart');
     }
 
-    use Withpagination;
-    public function render()
-    {
-        if ($this->sorting=='price')
-        {
-            $products = Product::where('name', 'like', '%'.$this->search .'%')->where('category_id', 'like', '%'.$this->product_cat_id.'%')->orderBy('price', 'ASC')->paginate($this->pagessize);
-        }
-        else
-        {
-            $products = Product::where('name', 'like', '%'.$this->search .'%')->where('category_id', 'like', '%'.$this->product_cat_id.'%')->paginate($this->pagessize);
-        }
-
-        $categories = Category::all();
-        return view('livewire.search-component', ['products'=> $products, 'categories'=>$categories])->layout('layouts.base');
-    }
 }

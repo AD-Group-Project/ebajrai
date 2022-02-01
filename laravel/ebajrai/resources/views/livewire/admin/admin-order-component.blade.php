@@ -18,7 +18,11 @@
                 grid-row-gap: 40px;
             }
             
-            .tableheader {font-weight: bold; font-size: 18px;}       
+            .tableheader {font-weight: bold; font-size: 18px;}    
+            
+            footer{
+                position: absolute;
+            }
         </style> 
     </head>
     
@@ -49,7 +53,11 @@
             <div> {{$order->mobile}} </div> 
             <div> {{$order->status}} </div>
             <div> {{$order->created_at}} </div>  
-            <div> <a href="{{route('admin.orderdetails',['order_id'=>$order->id])}}" style='background-color: #53B175; padding: 12px 30px 12px 30px'> View </a> </div>
+            <div>
+                <form action="{{route('admin.orderdetails',['order_id'=>$order->id])}}">
+                    <button style='background-color: #53B175; padding: 10px'>View</button>
+                </form> 
+            </div>
         @endforeach
         </div>
     

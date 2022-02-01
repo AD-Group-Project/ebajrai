@@ -1,7 +1,15 @@
 <!DOCTYPE html>
     <html> 
     <head>
-        <title> E-Bajrai Mini Market | All Item </title>
+        @auth
+        @if(Auth::user()->utype === 'ADM')
+          <title> All Items </title>
+        @elseif(Auth::user()->utype === 'USR')
+          <title> E-Bajrai Mini Market | All Items </title>
+        @endauth
+        @else
+            <title> E-Bajrai Mini Market | All Items </title>
+        @endif
         <style>
             footer
             {

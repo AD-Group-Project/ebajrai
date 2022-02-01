@@ -4,7 +4,8 @@
 
     <head>
 
-        <title> E-Bajrai | Checkout </title>
+        <title> E-Bajrai | Payment </title>
+        <link rel="shortcut icon" href="{{ asset('images/logo.png') }}">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="{{ asset('css/base_style.css') }}">
         <link rel="stylesheet" href="{{ asset('css/shop_style.css') }}">
@@ -47,6 +48,10 @@
             }
 
             .btn:hover {text-decoration: underline;}
+
+            footer{
+                position: absolute;
+            }
 
         </style>
     </head>
@@ -124,6 +129,9 @@
             }).render('#paypal-button-container');
 
           </script>
+          <footer>
+            <p>© Copyright 2021 Bajrai Mini Market, Inc.</p>
+        </footer>
     </body>
 
 </html>

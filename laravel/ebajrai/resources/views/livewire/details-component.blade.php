@@ -3,7 +3,9 @@
 <head>
     <title> E-Bajrai Mini Market | Product-{{$product->name}} </title>
     <style>
-        
+        footer{
+            position: relative;
+        }
     </style> 
 </head>
 <body> 
@@ -69,8 +71,8 @@
                         </form>
                     @endif
             </div>
-        
+            <br><br>
         </div>
-        
+        <br><br>
     </div>
 </body>

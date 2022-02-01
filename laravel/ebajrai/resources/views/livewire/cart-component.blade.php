@@ -4,7 +4,7 @@
     
     <head>
         
-        <title> Shopping Cart </title>
+        <title> E-Bajrai Mini Market | Shopping Cart </title>
         
         <link rel="stylesheet" href="base_style.css">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" > 
@@ -88,7 +88,7 @@
                     <button style="background-color: #53B175; color: white;" wire:click.prevent="increaseQuantity('{{$item->rowId}}')">+</button> 									
                 </div>
                 <div style='padding-top:30px;'> RM {{ $item->subtotal }} </div>    
-                <div style='padding-top:30px;'> <a href='#' style="border-radius:25%; background-color: #53B175; padding: 12px 18px 12px 18px" wire:click.prevent="destroy('{{$item->rowId}}')"> Delete </a> </div>
+                <div style='padding-top:30px;'> <a href='#' style="border-radius:10%; background-color: #53B175; padding: 12px 18px 12px 18px" wire:click.prevent="destroy('{{$item->rowId}}')"> Delete </a> </div>
             @endforeach
 
         </div> <br>     
@@ -98,12 +98,16 @@
             <div> <b style="font-size: 18px;">Total : </b>RM {{Cart::subtotal()}} </div>
             {{-- <div style="grid-column: 4/6"> <a href="#" wire:click.prevent="setAmountForCheckout()" style="background-color: #53B175; padding: 12px 90px 12px 90px"> Check out </a> </div> --}}
             <form action="/checkout">
-                <button class="checkout" type="submit"> Check out </button>
+                <button class="checkout" type="submit" style="border-radius:10px;"> Check out </button>
             </form>
         </div>
         @else
             <h1 style="text-align:center; color:red">No item in cart</h1>
-            <div style='padding-top:30px; display:flex; justify-content:center;'><a href="{{ route('home1') }}" style="border-radius:10%; background-color: #53B175; padding: 12px 18px 12px 18px">Shop Now!</a></div>
+            <div style='padding-top:30px; display:flex; justify-content:center;'>
+                <form action="{{ route('home1') }}">
+                    <button style="border-radius:10px; width:120px; height:40px; background-color: #53B175;">Shop Now!</button>
+                </form>
+            </div>
         @endif
     </body>
 

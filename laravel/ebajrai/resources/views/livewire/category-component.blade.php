@@ -22,6 +22,11 @@
                 -webkit-transform: scale(1.0);
 	            transform: scale(1.1);
             }
+            footer{
+                position: fixed;
+                bottom: 0px;
+                width: 100%;
+            }
         </style> 
     </head>
     <body>

@@ -3,7 +3,7 @@
 <html>
 
   <head>  
-    <title> Admin | Sales </title> 
+    <title> Sales Analytics </title> 
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/base_style.css') }}">
@@ -84,6 +84,9 @@
             grid-row-gap: 40px;
         }
         .tableheader1 {font-weight: bold; font-size: 18px;}  
+        footer{
+          position: relative;
+        }
 
     </style>
   </head>
@@ -182,7 +185,8 @@
             </div> 
           </div>
         </div>
-    </div>      
+    </div>  
+    <br><br>    
   </body>
 </html>
 

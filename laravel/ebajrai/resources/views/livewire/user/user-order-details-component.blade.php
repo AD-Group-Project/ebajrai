@@ -33,6 +33,10 @@
             .bawah {border-radius: 0 0 0.8em 0.8em}
             .jarak {padding-bottom: 10px;} 
             a:hover {color:white;}
+
+            footer{
+                position: relative !important;
+            }
         </style> 
     </head>
     
@@ -142,7 +146,7 @@
                 </div>
         </div>
         @endif
-        <br><br>
+        <br><br><br>
     </body>
 
 </html>

@@ -96,7 +96,9 @@
                     <div class="col-md-3 jarak"> <b>Address</b> </div>
                     <div class="col-md-9 jarak"> {{ $order->address }} </div>
                 </div><br>
-                <button style="width:200px"> <a href="/admin/updateorder/{{ $order->id }}">Update order status</a> </button>
+                <form action="/admin/updateorder/{{ $order->id }}">
+                    <button style="width:200px; border-radius:10px;">Update order status</button>
+                </form>
         </div><br>
 
         @if($order->status == "delivered")

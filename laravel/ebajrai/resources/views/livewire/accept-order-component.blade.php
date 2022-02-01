@@ -4,6 +4,8 @@
     
     <head>
         
+        <title> E-Bajrai Mini Market | Success </title>
+        <link rel="shortcut icon" href="{{ asset('images/logo.png') }}">
         <link rel="stylesheet" href="base_style.css">
         
         <style>
@@ -40,7 +42,9 @@
         
         <div class="base bawah">
             Your items has been placed and is on it's way to being processed. <br><br>
-            <a href="{{ route('user.orders') }}" style="background-color: #53B175; padding: 12px 60px 12px 60px;"> View my order </a>
+            <form action="{{ route('user.orders') }}">
+                <button style="background-color: #53B175;">View my order</button>
+            </form>
         </div>
     
     </body>

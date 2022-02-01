@@ -5,6 +5,7 @@
     <head>
         
         <title> Add Product </title>
+        <link rel="shortcut icon" href="{{ asset('images/logo.png') }}">
 
         <link rel="stylesheet" href="{{ asset('css/base_style.css') }}">
         <link rel="stylesheet" href="{{ asset('css/shop_style.css') }}">
@@ -54,6 +55,10 @@
             }
 
             a:hover {color: white;}
+
+            footer{
+                position: relative;
+            }
             
         </style>
         @livewireStyles
@@ -66,15 +71,15 @@
             <img src="{{ asset('images/logo.png') }}" width="80pixels" height="80pixels">
             <div style="padding-top: 25px"> E-Bajrai Mini Market </div>
             <div class="menu">
-                <div> <a href="{{ route('admin.about') }}"> About </a> </div>
+                <div> <a href="{{ route('aboutshop') }}"> About </a> </div>
                 <div> <a href="{{ route('home2') }}"> Products </a> </div>
-                <div> <a href=""> Orders </a> </div>
-                <div> <a href=""> Analytics </a> </div>
+                <div> <a href="{{ route('admin.order') }}"> Orders </a> </div>
+                <div> <a href="{{ route('admin.sales') }}"> Analytics </a> </div>
             </div>
             <div class="dropdown">
                 <div class="user dropbtn"> <a href="profile.html"><img src="{{ asset('images/user.jpg') }}" width="35pixels" height="35pixels"></a> </div>
                 <div class="dropdown-content">
-                    <a href="{{ route('home1') }}">Home</a>
+                    <a href="{{ route('aboutshop') }}">Home</a>
                     <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                     <form id="logout-form" method="POST" action="{{ route('logout') }}">
                         @csrf    
@@ -143,7 +148,9 @@
                 <div style="display: flex; justify-content: flex-end"><button type="submit"> Add Product </button></div>
                 </form></div>
             </div>
-        </div>
+        </div><br><br>
+        <footer>
+            <p>© Copyright 2021 Bajrai Mini Market, Inc.</p>
+        </footer>
     </body>
-
 </html>

@@ -3,11 +3,9 @@
 </div>
 
 <div class="content">
-    
+    <title> All Items </title>
     <div class="left_content"> 
-        
-        
-        
+
         <b> Category </b> <br>
         <ul>
         @foreach ($categories as $category) 
@@ -24,12 +22,16 @@
         @foreach ($products as $product) 
             
             <div class="item">
-                <img src="{{ asset('images') }}/{{ $product->image }}" style="width: 170px; height: 170px" class="center">
+                <div class="image">
+                    <img src="{{ asset('images') }}/{{ $product->image }}" style="width: 170px; height: 170px" class="center">
+                </div>
                 <b> {{ $product->name }} </b> <br>
                 <a href="{{route('product.details',['slug'=>$product->slug])}}" style="font-size: 12px; color: #268147"> Description </a> <br>
                 <div style="color: #268147; text-align: center"> RM {{ $product->price }} </div>
                 <div style="display: flex; justify-content: space-between">
-                    <button> <a href="/admin/editproduct/{{ $product->id }}">Edit product</a> </button>  
+                    <form action="/admin/editproduct/{{ $product->id }}">
+                        <button class="edit">Edit product</a> </button> 
+                    </form> 
                     <form action="/admin/deleteproduct/{{ $product->slug }}" method="get" onsubmit="return confirm('Are you sure you want to delete this product?')">
                         @method('delete')  
                         @csrf  

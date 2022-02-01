@@ -4,9 +4,9 @@
     
     <head>
         
-        <title> Products </title>
+        {{-- <title> Products </title> --}}
 
-        
+        <link rel="shortcut icon" href="{{ asset('images/logo.png') }}">
         <link rel="stylesheet" href="{{ asset('css/base_style.css') }}">
         <link rel="stylesheet" href="{{ asset('css/shop_style.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/astyle.css') }}">
@@ -14,6 +14,11 @@
         
         <style>
             
+            body{
+                margin: 0px;
+                padding: 0px;
+            }
+
             .btn {
                 background-color: #53B175;
                 color: white;
@@ -32,6 +37,52 @@
             .delete {
                 background-color: white;
                 border: 2px solid #53B175;
+                width: 120px;
+            }
+
+            footer{
+                position: relative;
+            }
+
+            button:hover{
+                cursor: pointer;
+                box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+                font-size: 17px;
+                transition: 0.3s;
+            }
+
+            .edit {
+                background-color: 53B175;
+                width: 120px;
+                border: 2px solid #53B175;
+                color: white;
+            }
+
+            .edit:hover{
+                cursor: pointer;
+                box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+                font-size: 17px;
+                transition: 0.3s;
+            }
+
+            .delete:hover{
+                cursor: pointer;
+                box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+                font-size: 17px;
+                transition: 0.3s;
+                background-color: #e67575;
+                color: white;
+            }
+
+            .item:hover{
+                box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+                transition: 0.3s;
+            }
+            
+            .image:hover img{
+                transition: 0.3s;
+                -webkit-transform: scale(1.0);
+                transform: scale(1.1);
             }
             
         </style>
@@ -56,7 +107,7 @@
             <div class="dropdown">
                 <div class="user dropbtn"> <a href="profile.html"><img src="{{ asset('images/user.jpg') }}" width="35pixels" height="35pixels"></a> </div>
                 <div class="dropdown-content">
-                    <a href="{{ route('home1') }}">Home</a>
+                    <a href="{{ route('aboutshop') }}">Home</a>
                     <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                     <form id="logout-form" method="POST" action="{{ route('logout') }}">
                         @csrf    
@@ -68,5 +119,7 @@
         {{$slot}}
     
     </body>
-
+    <footer>
+        <p>© Copyright 2021 Bajrai Mini Market, Inc.</p>
+    </footer>
 </html>

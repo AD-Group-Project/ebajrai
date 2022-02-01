@@ -2,7 +2,7 @@
 
 <html> 
     <head>        
-        <title> Orders </title>        
+        <title> E-Bajrai Mini Market | Orders </title>        
         <style>
     
             .table {
@@ -49,7 +49,11 @@
             <div> {{$order->mobile}} </div> 
             <div> {{$order->status}} </div>
             <div> {{$order->created_at}} </div>  
-            <div> <a href="{{route('user.orderdetails',['order_id'=>$order->id])}}" style='background-color: #53B175; padding: 12px 30px 12px 30px'> View </a> </div>
+            <div>
+                <form action="{{route('user.orderdetails',['order_id'=>$order->id])}}">
+                    <button style='background-color: #53B175; padding: 10px'>View</button>
+                </form> 
+            </div>
         @endforeach
         </div>
     

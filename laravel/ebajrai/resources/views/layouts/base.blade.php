@@ -18,9 +18,21 @@
         @livewireScripts
         
         <style>
+            body
+            {
+                padding: 0px;
+                margin: 0px;
+            }
             footer
             {
                 position: absolute;
+            }
+            button:hover
+            {
+                cursor: pointer;
+                box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+                font-size: 17px;
+                transition: 0.3s;
             }
         </style>
 
@@ -29,7 +41,7 @@
     <body>
         
         <div class="top">
-            <img src="{{ asset('images/logo.png') }}" width="80pixels" height="80pixels">
+            <img src="{{ asset('images/logo.png') }}" width:"80pixels" height="80pixels">
             <div style="padding-top: 25px"> E-Bajrai Mini Market </div>
             <div class="menu">
                 <div> <a href="{{ route('aboutshop') }}"> About </a> </div>
@@ -72,9 +84,9 @@
         
         {{$slot}}
         
-        <!--<footer>
+        <footer>
             <p>© Copyright 2021 Bajrai Mini Market, Inc.</p>
-        </footer>-->
+        </footer>
     </body>
 
 </html>

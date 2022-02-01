@@ -3,9 +3,16 @@
 <html>
 
     <head>
-
+      @auth
+      @if(Auth::user()->utype === 'ADM')
         <title> About Us </title>
-
+      @elseif(Auth::user()->utype === 'USR')
+        <title> E-Bajrai Mini Market | About Us </title>
+      @endauth
+      @else
+          <title> E-Bajrai Mini Market | About Us </title>
+      @endif
+        
         <link rel="stylesheet" href="base_style.css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="css/astyle.css">
@@ -76,6 +83,9 @@
             cursor: pointer;
             box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
           }
+          footer{
+            position: absolute;
+          }
         </style>
 
     </head>
@@ -93,9 +103,9 @@
         <div class="container">
           <div class="pic">
             <h3>Our Shop:</h3>
-            <img src="{{ asset('images/shop_pic.png') }}" alt="Our Shop" width="409px" height="174px">
+            <img class="img-thumbnail" src="{{ asset('images/shop_pic.png') }}" alt="Our Shop" width="409px" height="174px">
             <br><br><br>
-            <img src="{{ asset('images/shop_inside.png') }}" alt="Shop" width="409px" height="174px">
+            <img class="img-thumbnail" src="{{ asset('images/shop_inside.png') }}" alt="Shop" width="409px" height="174px">
           </div>
           <div class="desc">
             <h3>Description:</h3>
@@ -113,7 +123,7 @@
             <b>Phone Number: </b>{{ $shop->phoneNum }}<br>
             <b>Fax: </b>{{ $shop->fax }}<br>
           </div>
-
+          <br>
           @auth
           @if(Auth::user()->utype === 'ADM')
           <form action="/admin/editshop">

@@ -5,6 +5,7 @@
     <head>
         
         <title> Edit Product </title>
+        <link rel="shortcut icon" href="{{ asset('images/logo.png') }}">
 
         <link rel="stylesheet" href="{{ asset('css/base_style.css') }}">
         <link rel="stylesheet" href="{{ asset('css/shop_style.css') }}">
@@ -54,6 +55,10 @@
             }
 
             a:hover {color: white;}
+
+            footer{
+                position: relative;
+            }
             
         </style>
         @livewireStyles
@@ -74,7 +79,7 @@
             <div class="dropdown">
                 <div class="user dropbtn"> <a href="profile.html"><img src="{{ asset('images/user.jpg') }}" width="35pixels" height="35pixels"></a> </div>
                 <div class="dropdown-content">
-                    <a href="{{ route('home1') }}">Home</a>
+                    <a href="{{ route('aboutshop') }}">Home</a>
                     <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                     <form id="logout-form" method="POST" action="{{ route('logout') }}">
                         @csrf    
@@ -140,7 +145,10 @@
                 <div style="display: flex; justify-content: flex-end"><button type="submit"> Update Product </button></div>
                 </form></div>
             </div>
-        </div>
+        </div><br><br>
+        <footer>
+            <p>© Copyright 2021 Bajrai Mini Market, Inc.</p>
+        </footer>
     </body>
 
 </html>

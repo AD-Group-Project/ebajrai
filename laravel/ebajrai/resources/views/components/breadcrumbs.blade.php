@@ -4,7 +4,7 @@
             {{$slot}}
         </div>
         <div>
-            @include('search-component')
+            @include('/livewire/search-component')
         </div>
     </div>
 </div>

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\LandingComponent;
 use App\Http\Livewire\HomeComponent;
 use App\Http\Livewire\CartComponent;
 use App\Http\Livewire\SearchComponent;
@@ -36,7 +37,8 @@ use App\Http\Livewire\User\UserOrderDetailsComponent;
 |
 */
 
-Route::get('/', HomeComponent::class)->name('home1');
+Route::get('/', LandingComponent::class);
+Route::get('/home', HomeComponent::class)->name('home1');
 Route::get('/search', SearchComponent::class, 'search')->name('search');
 Route::get('/cart', CartComponent::class)->name('product.cart');;
 Route::get('/product-category/{category_slug}', CategoryComponent::class)->name('product.category');

@@ -25,6 +25,7 @@ use App\Http\Livewire\Admin\AdminSalesComponent;
 use App\Http\Controllers\AdminUpdateOrder;
 use App\Http\Livewire\User\UserOrdersComponent;
 use App\Http\Livewire\User\UserOrderDetailsComponent;
+use App\Http\Controllers\Search;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,7 +49,8 @@ Route::post('/submitOrder', [Checkout::class, 'submitOrder']);
 Route::get('/payment/{id}', [Payment::class, 'paymentPage'])->name('payment');
 Route::get('/aboutus', AboutShopComponent::class)->name('aboutshop');
 Route::get('/payment/confirmation/{id}', [Payment::class, 'changeStatus'])->name('paymentConfirmation');
-Route::get('/acceptOrder', AcceptOrderComponent::class)->name('acceptOrder'); 
+Route::get('/acceptOrder', AcceptOrderComponent::class)->name('acceptOrder');
+Route::get('/search2', 'App\Http\Controllers\Search@search'); 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

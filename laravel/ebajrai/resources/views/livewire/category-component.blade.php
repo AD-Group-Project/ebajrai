@@ -37,7 +37,14 @@
             
             <div class="content">
                 
-                <div class="left_content"> 
+                <div class="left_content">
+                    
+                    <b> Search </b> <br>
+                    <form action=" {{ url('/search2') }} " method="get">
+                        <input style="background-color: #e1f7e3; border-radius: 6px; border: 2px solid gainsboro; width:160px; height:30px;" type="text" name="nameSearch" size="10" placeholder="Search here..">
+                        <button name="search" type="submit" style="width: 35px; height: 35px;"><i class="fal fa-search"></i></button>
+                    </form>
+                    <br> 
                     
                     <b> Category </b> <br>
                     <ul>
@@ -50,11 +57,6 @@
                             <br><div style="display: flex"><button class="btn" style="font-size: 15px"> <a href="{{ route('admin.add') }}">Add New Product</a> </button></div>
                         @endif    
                     @endauth
-
-                    @component('components.breadcrumbs')
-                        <i class="fa fa-chevron-right breadcrumb-separator"></i>
-                        <span>Search</span>
-                    @endcomponent
 
                 </div>
                 

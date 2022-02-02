@@ -88,7 +88,7 @@
                 <p style="font-size: 22px;">Welcome to our store. Place your orders online and get it deliver to your doorstep or collect it at our <br> store. Great quality products picked and packed with care. Shop with us now.</p>
                 <br>
                 <div class="btn">
-                <a href="{{'home1'}}">Shop Now</a>
+                <a href="{{ route('home1') }}">Shop Now</a>
             </div>
             </div>
         </div>

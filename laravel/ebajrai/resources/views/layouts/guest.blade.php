@@ -17,7 +17,14 @@
             
         </script>
         @livewireScripts
-    
+        <style>
+            footer{
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+            }
+        </style>
+
     </head>
     
     <body>
@@ -66,7 +73,7 @@
         
         {{$slot}}
         
-        <br><br>
+        <br><br><br><br><br><br>
         <footer>
             <p>© Copyright 2021 Bajrai Mini Market, Inc.</p>
         </footer>

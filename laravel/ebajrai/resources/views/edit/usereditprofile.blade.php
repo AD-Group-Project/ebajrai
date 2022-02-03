@@ -5,6 +5,7 @@
 <head>
 
         <title> E-Bajrai | Edit Profile </title>
+        <link rel="shortcut icon" href="{{ asset('images/logo.png') }}">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="{{ asset('css/base_style.css') }}">
         <link rel="stylesheet" href="{{ asset('css/shop_style.css') }}">
@@ -59,6 +60,11 @@
             .col-md-9{
                 padding-left: 120px;
             }
+            footer{
+                position: fixed;
+                bottom:0;
+                width: 100%;
+            }  
         </style>
 
     </head>
@@ -117,5 +123,9 @@
                 </form>
             </div>
         </div>
+        <br><br><br><br><br><br>
+        <footer>
+            <p>© Copyright 2021 Bajrai Mini Market, Inc.</p>
+        </footer>
     </body>
 </html>

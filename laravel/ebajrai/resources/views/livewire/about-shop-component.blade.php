@@ -84,7 +84,9 @@
             box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
           }
           footer{
-            position: absolute;
+            position: fixed;
+            bottom: 0;
+            width:100%;
           }
         </style>
 
@@ -132,7 +134,7 @@
           @endif
           @endauth
         </div>
-
+        <br><br><br><br><br>
     </body>
 
 </html>

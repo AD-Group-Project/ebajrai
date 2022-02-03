@@ -21,7 +21,9 @@
             .tableheader {font-weight: bold; font-size: 18px;}    
             
             footer{
-                position: absolute;
+                position: fixed;
+                bottom: 0;
+                width: 100%;
             }
         </style> 
     </head>
@@ -60,7 +62,7 @@
             </div>
         @endforeach
         </div>
-    
+        <br><br><br><br><br><br>
     </body>
 
 </html>

@@ -50,7 +50,12 @@
                 height: 40px;
                 border-radius: 3%;
             }
-        
+            
+            footer{
+                position: fixed;
+                bottom:0;
+                width:100%;
+            }
         </style>
     
     </head>
@@ -109,6 +114,7 @@
                 </form>
             </div>
         @endif
+        <br> <br> <br> <br> <br> <br> 
     </body>
 
 </html>

@@ -72,6 +72,11 @@
             .col-md-9{
                 padding-left: 120px;
             }
+            footer{
+                position: fixed;
+                bottom:0;
+                width: 100%;
+            }  
         </style>
 
     </head>
@@ -118,5 +123,6 @@
                 </div>
             </div>
         </div>
+        <br><br><br><br><br><br>
     </body>
 </html>

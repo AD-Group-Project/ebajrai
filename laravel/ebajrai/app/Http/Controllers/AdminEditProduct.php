@@ -85,6 +85,6 @@ class AdminEditProduct extends Controller
     function deleteProduct($slug)
     {
         DB::delete('delete from products where slug=?', [$slug]);
-        return redirect('/')->with('message', 'Product has been deleted succesfully!');
+        return redirect('/admin/dashboard')->with('message', 'Product has been deleted succesfully!');
     }
 }

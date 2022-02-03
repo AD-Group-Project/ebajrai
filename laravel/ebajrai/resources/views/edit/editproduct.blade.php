@@ -99,7 +99,7 @@
                         {{ session()->get('message') }}
                     </div>
                 @endif
-                <div><form method="post" action="/editproduct/{{ $product[0]->id }}">
+                <div><form method="post" action="/editproduct/{{ $product[0]->id }}" enctype="multipart/form-data">>
                     @csrf
                 <h2 style="text-align: center"> Edit Product Details </h2> <br>
                     <div class="bahagi">
@@ -126,7 +126,7 @@
                         <div> <input type="text" name="quantity" value="{{ $product[0]->quantity }}"> </div>
 
                         <div> <label>Product Image</label> </div>
-                        <div> <input type="file" style="background-color: white; border: none" name="image" value="{{ $product[0]->image }}">
+                        <div> <input type="file" style="background-color: white; border: none" name="image">
                         </div>
                         
                         <div> <label>Category</label> </div>

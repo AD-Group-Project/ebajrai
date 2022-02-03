@@ -25,6 +25,11 @@
     
     
     <div class="right_content" style="border: none"> 
+        @if(session()->has('message'))
+            <div class="mesej">
+                {{ session()->get('message') }}
+            </div>
+         @endif
         
         @foreach ($products as $product) 
             

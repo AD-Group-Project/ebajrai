@@ -52,6 +52,10 @@
                 font-size: 15px;
             }
 
+            footer{
+                position: absolute;
+            }
+
             a:hover {color: white;}         
         </style>
         @livewireStyles
@@ -134,6 +138,9 @@
             </div>
         </div>
         <br>
+        <footer>
+            <p>© Copyright 2021 Bajrai Mini Market, Inc.</p>
+        </footer>
     </body>
 
 </html>

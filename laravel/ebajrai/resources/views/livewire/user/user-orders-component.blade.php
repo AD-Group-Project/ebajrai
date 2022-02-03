@@ -18,7 +18,12 @@
                 grid-row-gap: 40px;
             }
             
-            .tableheader {font-weight: bold; font-size: 18px;}       
+            .tableheader {font-weight: bold; font-size: 18px;} 
+            footer{
+                position: fixed;
+                bottom:0;
+                width: 100%;
+            }      
         </style> 
     </head>
     
@@ -56,7 +61,7 @@
             </div>
         @endforeach
         </div>
-    
+        <br><br><br><br><br>
     </body>
 
 </html>

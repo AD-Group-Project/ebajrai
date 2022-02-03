@@ -5,6 +5,7 @@
     <head>
 
         <title> About Us </title>
+        <link rel="shortcut icon" href="{{ asset('images/logo.png') }}">
         <link rel="stylesheet" href="{{ asset('css/base_style.css') }}">
 
 
@@ -34,6 +35,15 @@
           .submitButton{
             float: right;
             padding-right: 70px;
+          }
+          body{
+            margin: 0px;
+            padding: 0px;
+          }
+          footer{
+            position: fixed;
+            bottom: 0;
+            width: 100%;
           }
         </style>
         @livewireStyles
@@ -98,7 +108,10 @@
                     </form>
                 </div>
         </div>
-
+        <br><br><br><br><br><br>
+        <footer>
+          <p>© Copyright 2021 Bajrai Mini Market, Inc.</p>
+      </footer>
     </body>
 
 </html>
